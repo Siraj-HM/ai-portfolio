@@ -1,215 +1,103 @@
-/* Import Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
 
-/* General Styles */
 body {
-    font-family: 'Poppins', sans-serif; /* Smoother text for paragraphs */
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #0a0a0a, #111, #222);
+    background: #0a0a0a;
     color: #fff;
     overflow-x: hidden;
 }
 
+/* Centered Page */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Dark Mode */
+.light-mode {
+    background: #f5f5f5;
+    color: #000;
+}
+
 /* Futuristic Header */
 header {
     text-align: center;
     padding: 60px 20px;
-    background: rgba(0, 0, 0, 0.8);
-    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
-    border-bottom: 2px solid #0ff;
+    background: #111;
+    box-shadow: 0px 0px 20px #0ff;
     text-transform: uppercase;
-    font-family: 'Orbitron', sans-serif; /* High-tech font for headings */
-}
-
-/* Section Titles */
-h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #0ff;
-    text-transform: uppercase;
-    border-bottom: 2px solid #0ff;
-    padding-bottom: 10px;
     font-family: 'Orbitron', sans-serif;
 }
 
-/* Body Text */
-p, li {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    text-align: justify;
-    font-family: 'Poppins', sans-serif; /* Smooth modern font for text */
-}
-
-
-/* Centered Page Wrapper */
-.container {
-    max-width: 1200px; /* Keeps content in a structured frame */
-    margin: auto;
-    padding: 20px;
-}
-
-/* Futuristic Header */
-header {
-    text-align: center;
-    padding: 60px 20px;
-    background: rgba(0, 0, 0, 0.8);
-    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
-    border-bottom: 2px solid #0ff;
-    text-transform: uppercase;
-}
-
-/* Navigation Bar */
+/* Navigation */
 nav {
-    position: sticky;
-    top: 0;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(10px);
-    padding: 10px 0;
-    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.4);
-    z-index: 1000;
+    text-align: center;
+    padding: 10px;
+    background: #222;
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
     padding: 0;
+    list-style: none;
 }
 
 nav ul li {
-    margin: 0 20px;
+    display: inline;
+    margin: 0 15px;
 }
 
 nav ul li a {
+    color: #0ff;
     text-decoration: none;
-    color: #0ff;
     font-weight: bold;
-    transition: 0.3s;
 }
 
-nav ul li a:hover {
-    color: #fff;
-    text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
-}
-
-/* Section Styling */
-section {
-    max-width: 1000px; /* Keeps sections inside a structured width */
-    margin: auto;
-    padding: 80px 10%;
-    text-align: left;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.3); /* Subtle border effect */
-}
-
-/* Section Titles */
-h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #0ff;
-    text-transform: uppercase;
-    border-bottom: 2px solid #0ff;
-    padding-bottom: 10px;
-}
-
-/* About Section */
-#about p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    text-align: justify;
-}
-
-/* Experience Section */
-.job {
-    margin-bottom: 40px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.2);
-}
-
-.job h3 {
-    font-size: 1.5rem;
-    color: #0ff;
-    margin-bottom: 10px;
-}
-
-.job p {
-    font-size: 1rem;
-    color: #ccc;
-    margin-bottom: 10px;
-    font-style: italic;
-}
-
-.job ul {
-    list-style-type: square;
-    padding-left: 20px;
-    font-size: 1rem;
-    line-height: 1.8;
-}
-
-/* AI Work Gallery */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 1000px; /* Keeps the gallery neatly contained */
-    margin: auto;
-}
-
-.category {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.3);
-    text-align: center;
-    transition: 0.3s;
-}
-
-.category:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.6);
-}
-
-.category img, .category video {
+/* Particle Background */
+#particles-js {
+    position: fixed;
     width: 100%;
-    border-radius: 10px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
-/* Contact Section */
-#contact p {
-    text-align: center;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+/* Dark Mode Toggle */
+.toggle-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
 }
 
-/* Futuristic Button */
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    color: #0ff;
-    border: 2px solid #0ff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-    border-radius: 5px;
+.switch {
+    width: 50px;
+    height: 25px;
 }
 
-.button:hover {
-    background: #0ff;
-    color: #000;
-    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8);
+.slider {
+    background-color: #555;
+    transition: 0.4s;
+    border-radius: 25px;
+}
+
+input:checked + .slider {
+    background-color: #0ff;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
+    background: #222;
+    box-shadow: 0px 0px 10px #0ff;
 }
