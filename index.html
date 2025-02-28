@@ -9,6 +9,18 @@
 </head>
 <body>
 
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Dark Mode Toggle -->
+    <div class="toggle-container">
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider round"></span>
+        </label>
+        <p id="mode-text">Dark Mode</p>
+    </div>
+
     <!-- HEADER -->
     <header>
         <h1>Siraj Hassan</h1>
@@ -25,107 +37,65 @@
         </ul>
     </nav>
 
-    <!-- ABOUT SECTION -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            AI Creator with expertise in **AI-powered image and video generation** using tools like 
-            **Stable Diffusion, Flux, ComfyUI, AnimateDiff, and Hunyuan Video AI**.  
-            With a **strong foundation in traditional photography, videography, and video editing**,  
-            I transitioned into **AI-driven workflows**, specializing in **LORA training, AI video processing, and generative AI projects**.  
-        </p>
-    </section>
+    <div class="container">
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                AI Creator with expertise in <strong>AI-powered image and video generation</strong> using tools like 
+                <strong>Stable Diffusion, Flux, ComfyUI, AnimateDiff, and Hunyuan Video AI</strong>.  
+                With a <strong>strong foundation in traditional photography, videography, and video editing</strong>,  
+                I transitioned into <strong>AI-driven workflows</strong>, specializing in <strong>LORA training, AI video processing, and generative AI projects</strong>.  
+            </p>
+        </section>
 
-    <!-- WORK SECTION -->
-    <section id="work">
-        <h2>AI Work Showcase</h2>
-        <div class="gallery">
-            <div class="category">
-                <h3>Text-to-Image</h3>
-                <img src="assets/text-to-image.jpg" alt="Text to Image Example">
+        <!-- WORK SECTION -->
+        <section id="work">
+            <h2>AI Work Showcase</h2>
+            <div class="gallery">
+                <div class="category">
+                    <h3>Text-to-Image</h3>
+                    <img src="assets/text-to-image.jpg" alt="Text to Image Example">
+                </div>
+                <div class="category">
+                    <h3>AnimateDiff Video</h3>
+                    <video src="assets/animatediff.mp4" controls></video>
+                </div>
+                <div class="category">
+                    <h3>Video-to-Video AI</h3>
+                    <video src="assets/video-to-video.mp4" controls></video>
+                </div>
             </div>
-            <div class="category">
-                <h3>Image-to-Image</h3>
-                <img src="assets/image-to-image.jpg" alt="Image to Image Example">
-            </div>
-            <div class="category">
-                <h3>Reference-Based Image-to-Image</h3>
-                <img src="assets/ref-image-to-image.jpg" alt="Reference Based Image">
-            </div>
-            <div class="category">
-                <h3>AnimateDiff Video</h3>
-                <video src="assets/animatediff.mp4" controls></video>
-            </div>
-            <div class="category">
-                <h3>Video-to-Video AI</h3>
-                <video src="assets/video-to-video.mp4" controls></video>
-            </div>
-            <div class="category">
-                <h3>Masking in Video</h3>
-                <video src="assets/masking.mp4" controls></video>
-            </div>
-            <div class="category">
-                <h3>Abstract AI Videos</h3>
-                <video src="assets/abstract.mp4" controls></video>
-            </div>
-            <div class="category">
-                <h3>Third-Party AI Tools</h3>
-                <img src="assets/third-party.jpg" alt="Third Party AI Example">
-            </div>
-            <div class="category">
-                <h3>Text-to-Video & Image-to-Video</h3>
-                <video src="assets/text-to-video.mp4" controls></video>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- EXPERIENCE SECTION -->
-    <section id="experience">
-        <h2>Experience</h2>
-        <div class="job">
-            <h3>AI Artist</h3>
-            <p><strong>October 2023 – Present</strong></p>
-            <ul>
-                <li>Explored and tested emerging AI models and tools to improve creative and operational workflows.</li>
-                <li>Used Stable Diffusion (V1.5, SDXL) and Flux models inside ComfyUI to create high-quality images and videos.</li>
-                <li>Specialized in LORA training for character and product modeling, enabling highly customized AI-generated outputs.</li>
-                <li>Created AI-powered video content using Animate Diff and Hunyuan Video AI.</li>
-                <li>Developed the AI-based backend engine for a garment app using Meta AI's Segment Anything and IDM VTON.</li>
-                <li>Designed and implemented the AI-driven backend for a puzzle game leveraging image segmentation.</li>
-                <li>Experimented with green screen footage, applying ControlNets, LORAs, and custom-trained models to transform it into short AI-generated films.</li>
-                <li>Optimized system prompts for AI video models, improving motion consistency, visual coherence, and content accuracy across AnimateDiff, RunwayML, and Veo 2.</li>
-            </ul>
-        </div>
-        <div class="job">
-            <h3>Freelance AI Artist</h3>
-            <p><strong>August 2022 – August 2023</strong></p>
-            <ul>
-                <li>Explored MidJourney, Stable Diffusion, and ComfyUI for AI-driven image and video creation, generating 50+ client-specific artworks.</li>
-                <li>Developed custom AI workflows in ComfyUI, optimizing high-quality content production for various creative projects.</li>
-                <li>Produced viral AI content, including face-swapping videos and voice-cloning projects, accumulating over 1 million views.</li>
-            </ul>
-        </div>
-        <div class="job">
-            <h3>Web3 & NFT Experience</h3>
-            <ul>
-                <li>Experienced in the Web3 ecosystem, actively engaging with NFT publishing and selling.</li>
-                <li>Bought and collected NFTs from other artists, participating in blockchain-based digital ownership.</li>
-            </ul>
-        </div>
-    </section>
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="job">
+                <h3>AI Artist</h3>
+                <p><strong>October 2023 – Present</strong></p>
+                <ul>
+                    <li>Explored and tested emerging AI models and tools.</li>
+                    <li>Used Stable Diffusion (V1.5, SDXL) and Flux models inside ComfyUI.</li>
+                    <li>Specialized in LORA training for character and product modeling.</li>
+                </ul>
+            </div>
+        </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: sirajhassan@live.com</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/sirajsoft/" target="_blank">linkedin.com/in/sirajsoft</a></p>
-        <p>GitHub: <a href="https://github.com/siraj-hm" target="_blank">github.com/siraj-hm</a></p>
-    </section>
+        <!-- CONTACT SECTION -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: sirajhassan@live.com</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/sirajsoft/" target="_blank">linkedin.com/in/sirajsoft</a></p>
+        </section>
+    </div>
 
-    <!-- FOOTER -->
     <footer>
         <p>&copy; 2024 Siraj Hassan. All Rights Reserved.</p>
     </footer>
+
+    <!-- Particle JS -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
 </body>
 </html>
