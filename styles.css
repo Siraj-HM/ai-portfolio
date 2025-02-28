@@ -1,14 +1,47 @@
-/* General Styles */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
 
+/* General Styles */
 body {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Smoother text for paragraphs */
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #0a0a0a, #111, #222);
     color: #fff;
     overflow-x: hidden;
 }
+
+/* Futuristic Header */
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+    border-bottom: 2px solid #0ff;
+    text-transform: uppercase;
+    font-family: 'Orbitron', sans-serif; /* High-tech font for headings */
+}
+
+/* Section Titles */
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #0ff;
+    text-transform: uppercase;
+    border-bottom: 2px solid #0ff;
+    padding-bottom: 10px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Body Text */
+p, li {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: justify;
+    font-family: 'Poppins', sans-serif; /* Smooth modern font for text */
+}
+
 
 /* Centered Page Wrapper */
 .container {
