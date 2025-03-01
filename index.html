@@ -16,24 +16,29 @@
 <body>
   <!-- HEADER & NAVIGATION -->
   <header>
-    <div class="logo">AI Creator</div>
-    <nav>
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-text">SIRAJ HASSAN</span>
+        <span class="logo-dot"></span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#hero" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#work" class="nav-link">Work</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- HERO SECTION (using 16:9 image2 as background) -->
+  <!-- HERO SECTION -->
   <section id="hero">
     <div class="hero-content">
-      <h1>Welcome to My AI Portfolio</h1>
-      <p>AI Creator | Visual Artist | Innovator</p>
+      <h1 class="hero-name" data-text="SIRAJ HASSAN">SIRAJ HASSAN</h1>
+      <p>AI Creator | Visual Artist | AI-Powered Content Designer</p>
       <button onclick="scrollToSection('work')">View My Work</button>
     </div>
   </section>
@@ -56,38 +61,159 @@
     </div>
   </section>
 
-  <!-- WORK SECTION (sample work cards with square image1) -->
+  <!-- WORK SECTION -->
   <section id="work">
     <h2>My Work</h2>
-    <p class="section-intro">Explore my AI-driven image and video creations.</p>
+    <p class="section-intro">Explore my portfolio of AI-generated artworks and creative projects, showcasing the intersection of artificial intelligence and visual design.</p>
+    
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="text-to-image">Text to Image</button>
+      <button class="filter-btn" data-filter="image-to-image">Style Transfer</button>
+      <button class="filter-btn" data-filter="video">AI Animation</button>
+      <button class="filter-btn" data-filter="character">Character Design</button>
+    </div>
+
     <div class="work-grid">
-      <!-- Card 1 -->
-      <div class="work-card">
-        <img
-          src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png"
-          alt="Text-to-Image Example"
-        />
-        <h3>Text-to-Image</h3>
-        <p>Brief description of this project or piece.</p>
+      <!-- Text to Image Projects (3) -->
+      <div class="work-card" data-category="text-to-image">
+        <div class="work-card-inner">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Dreamscape Generation">
+          <div class="work-card-overlay">
+            <h3>Dreamscape Generation</h3>
+            <p>Creating stunning landscapes and environments from textual descriptions using advanced AI models.</p>
+            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+          </div>
+        </div>
       </div>
-      <!-- Card 2 -->
-      <div class="work-card">
-        <img
-          src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png"
-          alt="Image-to-Image Example"
-        />
-        <h3>Image-to-Image</h3>
-        <p>Brief description of this project or piece.</p>
+
+      <div class="work-card" data-category="text-to-image">
+        <div class="work-card-inner">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Fantasy World Creation">
+          <div class="work-card-overlay">
+            <h3>Fantasy World Creation</h3>
+            <p>Generating immersive fantasy worlds and mythical scenes through detailed text prompts and AI imagination.</p>
+            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+          </div>
+        </div>
       </div>
-      <!-- Card 3 -->
-      <div class="work-card">
-        <img
-          src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png"
-          alt="Reference Based Image"
-        />
-        <h3>Reference-Based Image</h3>
-        <p>Brief description of this project or piece.</p>
+
+      <div class="work-card" data-category="text-to-image">
+        <div class="work-card-inner">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Abstract Concepts">
+          <div class="work-card-overlay">
+            <h3>Abstract Concepts</h3>
+            <p>Visualizing abstract ideas and emotions through AI-generated artwork.</p>
+            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+          </div>
+        </div>
       </div>
+
+      <!-- Style Transfer Projects (3) -->
+      <div class="work-card" data-category="image-to-image">
+        <div class="work-card-inner">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Artistic Style Transfer">
+          <div class="work-card-overlay">
+            <h3>Artistic Style Transfer</h3>
+            <p>Transforming photographs into unique artistic masterpieces using AI-powered style transfer techniques.</p>
+            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-card" data-category="image-to-image">
+        <div class="work-card-inner">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Neo-Classical Transformation">
+          <div class="work-card-overlay">
+            <h3>Neo-Classical Transformation</h3>
+            <p>Converting modern photographs into stunning neo-classical paintings using advanced style transfer algorithms.</p>
+            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-card" data-category="image-to-image">
+        <div class="work-card-inner">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Vintage Photo Restoration">
+          <div class="work-card-overlay">
+            <h3>Vintage Photo Restoration</h3>
+            <p>Restoring and enhancing old photographs using AI image processing techniques.</p>
+            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Animation Projects (3) -->
+      <div class="work-card" data-category="video">
+        <div class="work-card-inner">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Dynamic AI Animation">
+          <div class="work-card-overlay">
+            <h3>Dynamic AI Animation</h3>
+            <p>Bringing still images to life with fluid motion and realistic animations powered by AI.</p>
+            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-card" data-category="video">
+        <div class="work-card-inner">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="AI Music Visualization">
+          <div class="work-card-overlay">
+            <h3>AI Music Visualization</h3>
+            <p>Creating dynamic visual experiences that respond to music using AI-powered animation techniques.</p>
+            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-card" data-category="video">
+        <div class="work-card-inner">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="AI Dance Generation">
+          <div class="work-card-overlay">
+            <h3>AI Dance Generation</h3>
+            <p>Creating fluid dance animations from static poses using AI motion synthesis.</p>
+            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Character Design Projects (3) -->
+      <div class="work-card" data-category="character">
+        <div class="work-card-inner">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="AI Character Creation">
+          <div class="work-card-overlay">
+            <h3>AI Character Creation</h3>
+            <p>Designing unique and expressive characters using advanced AI generation techniques.</p>
+            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-card" data-category="character">
+        <div class="work-card-inner">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Fantasy Character Design">
+          <div class="work-card-overlay">
+            <h3>Fantasy Character Design</h3>
+            <p>Creating unique fantasy characters with distinct personalities using AI-driven character generation.</p>
+            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-card" data-category="character">
+        <div class="work-card-inner">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Cyberpunk Characters">
+          <div class="work-card-overlay">
+            <h3>Cyberpunk Characters</h3>
+            <p>Designing futuristic cyberpunk characters with unique cybernetic enhancements.</p>
+            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="load-more-container">
+      <button id="loadMoreBtn" class="load-more-btn">Load More Projects</button>
     </div>
   </section>
 
@@ -95,16 +221,59 @@
   <section id="gallery">
     <h2>Gallery</h2>
     <p class="section-intro">Explore a collection of my latest AI-generated images.</p>
-    <div class="gallery-scroll">
-      <!-- Gallery Item 1 -->
-      <div class="gallery-item">
-        <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 1" onclick="openLightbox(this.src)">
+    <div class="gallery-container">
+      <button class="gallery-nav prev" onclick="scrollGallery('left')">&lt;</button>
+      <div class="gallery-scroll">
+        <!-- Gallery Items 1-5 -->
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 1" onclick="openLightbox(this.src)">
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Gallery Image 2" onclick="openLightbox(this.src)">
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 3" onclick="openLightbox(this.src)">
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Gallery Image 4" onclick="openLightbox(this.src)">
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 5" onclick="openLightbox(this.src)">
+        </div>
+        <!-- Gallery Items 6-10 -->
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Gallery Image 6" onclick="openLightbox(this.src)">
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 7" onclick="openLightbox(this.src)">
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Gallery Image 8" onclick="openLightbox(this.src)">
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 9" onclick="openLightbox(this.src)">
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Gallery Image 10" onclick="openLightbox(this.src)">
+        </div>
+        <!-- Gallery Items 11-15 -->
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 11" onclick="openLightbox(this.src)">
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Gallery Image 12" onclick="openLightbox(this.src)">
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 13" onclick="openLightbox(this.src)">
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Gallery Image 14" onclick="openLightbox(this.src)">
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 15" onclick="openLightbox(this.src)">
+        </div>
       </div>
-      <!-- Gallery Item 2 -->
-      <div class="gallery-item">
-        <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 2" onclick="openLightbox(this.src)">
-      </div>
-      <!-- Add more gallery items as needed -->
+      <button class="gallery-nav next" onclick="scrollGallery('right')">&gt;</button>
     </div>
   </section>
 
@@ -141,18 +310,55 @@
 
   <!-- CONTACT SECTION -->
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Interested in collaborating or hiring me? Let's connect!</p>
-    <div class="contact-details">
-      <p>Email: <a href="mailto:sirajhassan@live.com">sirajhassan@live.com</a></p>
-      <p>
-        LinkedIn:
-        <a href="https://www.linkedin.com/in/sirajsoft" target="_blank" rel="noopener noreferrer">linkedin.com/in/sirajsoft</a>
-      </p>
-      <p>
-        GitHub:
-        <a href="https://github.com/siraj-hm" target="_blank" rel="noopener noreferrer">github.com/siraj-hm</a>
-      </p>
+    <h2>Let's Create Together</h2>
+    <p class="section-intro">Ready to bring your ideas to life with AI?</p>
+    
+    <div class="contact-container">
+      <!-- Contact Info Cards -->
+      <div class="contact-info">
+        <div class="contact-card">
+          <div class="contact-icon">📧</div>
+          <h3>Email</h3>
+          <a href="mailto:sirajhassan@live.com" class="glow-link">sirajhassan@live.com</a>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon">💼</div>
+          <h3>LinkedIn</h3>
+          <a href="https://www.linkedin.com/in/sirajsoft" target="_blank" rel="noopener noreferrer" class="glow-link">linkedin.com/in/sirajsoft</a>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon">💻</div>
+          <h3>GitHub</h3>
+          <a href="https://github.com/siraj-hm" target="_blank" rel="noopener noreferrer" class="glow-link">github.com/siraj-hm</a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-container">
+        <h3>Send Me a Message</h3>
+        <form id="contactForm" class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <input type="text" id="name" name="name" required placeholder="Your Name">
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" required placeholder="Your Email">
+          </div>
+          <div class="form-group">
+            <select id="subject" name="subject" required>
+              <option value="" disabled selected>Select Subject</option>
+              <option value="collaboration">Collaboration</option>
+              <option value="project">Project Inquiry</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" required placeholder="Your Message" rows="4"></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -167,6 +373,14 @@
     <p>© 2024 Siraj Hassan. All Rights Reserved.</p>
   </footer>
 
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      // Initialize EmailJS with your public key
+      emailjs.init("7gAEu1J9St5m1PYeE");
+    })();
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
