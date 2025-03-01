@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Siraj Hassan AI Portfolio</title>
+  <title>AI Portfolio - Enhanced</title>
   <!-- Import Google Fonts (example) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -44,9 +44,7 @@
     <div class="about-container">
       <div class="about-text">
         <p>
-          I am an AI-driven visual artist specializing in image and video
-          generation using state-of-the-art tools. My journey combines traditional
-          photography with innovative AI workflows to push creative boundaries.
+          I am an AI-driven visual artist specializing in image and video generation using state-of-the-art tools. My journey combines traditional photography with innovative AI workflows to push creative boundaries.
         </p>
       </div>
       <div class="about-image">
@@ -93,22 +91,18 @@
     </div>
   </section>
 
-  <!-- GALLERY SECTION (using square image1) -->
+  <!-- GALLERY SECTION (Horizontal scrollable gallery with lightbox) -->
   <section id="gallery">
     <h2>Gallery</h2>
     <p class="section-intro">Explore a collection of my latest AI-generated images.</p>
-    <div class="gallery-grid">
+    <div class="gallery-scroll">
       <!-- Gallery Item 1 -->
       <div class="gallery-item">
-        <a href="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" target="_blank">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 1">
-        </a>
+        <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 1" onclick="openLightbox(this.src)">
       </div>
       <!-- Gallery Item 2 -->
       <div class="gallery-item">
-        <a href="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" target="_blank">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 2">
-        </a>
+        <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 2" onclick="openLightbox(this.src)">
       </div>
       <!-- Add more gallery items as needed -->
     </div>
@@ -153,24 +147,20 @@
       <p>Email: <a href="mailto:sirajhassan@live.com">sirajhassan@live.com</a></p>
       <p>
         LinkedIn:
-        <a
-          href="https://www.linkedin.com/in/sirajsoft"
-          target="_blank"
-          rel="noopener noreferrer"
-          >linkedin.com/in/sirajsoft</a
-        >
+        <a href="https://www.linkedin.com/in/sirajsoft" target="_blank" rel="noopener noreferrer">linkedin.com/in/sirajsoft</a>
       </p>
       <p>
         GitHub:
-        <a
-          href="https://github.com/siraj-hm"
-          target="_blank"
-          rel="noopener noreferrer"
-          >github.com/siraj-hm</a
-        >
+        <a href="https://github.com/siraj-hm" target="_blank" rel="noopener noreferrer">github.com/siraj-hm</a>
       </p>
     </div>
   </section>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <span class="close" onclick="closeLightbox(event)">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" alt="Expanded View">
+  </div>
 
   <!-- FOOTER -->
   <footer>
