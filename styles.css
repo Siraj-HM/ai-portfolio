@@ -7,12 +7,13 @@
   box-sizing: border-box;
 }
 
-/* Root Variables (Customize Colors as Needed) */
+/* Root Variables for Dark Theme */
 :root {
-  --primary-color: #0f3d3e;
-  --secondary-color: #d9b08c;
-  --text-color: #333;
-  --background-color: #fff;
+  --primary-color: #bb86fc;       /* Accent color */
+  --secondary-color: #03dac6;     /* Accent color */
+  --text-color: #ffffff;          /* Light text */
+  --background-color: #121212;    /* Dark background */
+  --header-bg: #1f1f1f;           /* Darker header */
   --font-family: 'Roboto', sans-serif;
 }
 
@@ -29,7 +30,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--primary-color);
+  background-color: var(--header-bg);
   padding: 1rem 2rem;
   position: fixed;
   width: 100%;
@@ -38,7 +39,7 @@ header {
 }
 
 .logo {
-  color: #fff;
+  color: var(--text-color);
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -50,7 +51,7 @@ nav ul {
 }
 
 nav a {
-  color: #fff;
+  color: var(--text-color);
   text-decoration: none;
   font-weight: 500;
   transition: opacity 0.3s ease;
@@ -67,25 +68,25 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 5rem; /* to offset the fixed header */
+  padding-top: 5rem; /* offset for fixed header */
   text-align: center;
 }
 
 .hero-content h1 {
   font-size: 3rem;
-  color: #fff;
+  color: var(--text-color);
   margin-bottom: 0.5rem;
 }
 
 .hero-content p {
   font-size: 1.25rem;
-  color: #fff;
+  color: var(--text-color);
   margin-bottom: 1.5rem;
 }
 
 .hero-content button {
   background-color: var(--secondary-color);
-  color: #fff;
+  color: var(--background-color);
   border: none;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
@@ -94,7 +95,7 @@ nav a:hover {
 }
 
 .hero-content button:hover {
-  background-color: #bb946c;
+  background-color: #03b4ac;
 }
 
 /* Section Titles */
@@ -102,6 +103,7 @@ section h2 {
   font-size: 2rem;
   margin: 2rem 0 1rem;
   text-align: center;
+  color: var(--text-color);
 }
 
 /* About Section */
@@ -145,6 +147,7 @@ section h2 {
 .section-intro {
   text-align: center;
   margin-bottom: 2rem;
+  color: var(--text-color);
 }
 
 .work-grid {
@@ -154,7 +157,7 @@ section h2 {
 }
 
 .work-card {
-  background-color: #f9f9f9;
+  background-color: #1f1f1f;
   border-radius: 8px;
   overflow: hidden;
   text-align: center;
@@ -177,6 +180,7 @@ section h2 {
 
 .work-card p {
   padding: 0 1rem 1rem;
+  color: var(--text-color);
 }
 
 /* Experience Section */
@@ -212,6 +216,7 @@ section h2 {
 .timeline-content ul {
   list-style: disc inside;
   margin-left: 1rem;
+  color: var(--text-color);
 }
 
 /* Contact Section */
@@ -220,6 +225,7 @@ section h2 {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+  color: var(--text-color);
 }
 
 .contact-details p {
@@ -238,12 +244,12 @@ section h2 {
 
 /* Footer */
 footer {
-  background-color: #f1f1f1;
+  background-color: var(--header-bg);
   text-align: center;
   padding: 1rem 0;
   margin-top: 2rem;
   font-size: 0.9rem;
-  color: #666;
+  color: var(--text-color);
 }
 
 /* Responsive */
