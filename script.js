@@ -1,36 +1,36 @@
 "use strict";
 
 /**
- * Smoothly scrolls the page to a given section by ID.
- * @param {string} sectionId - The ID of the target section.
+ * Smoothly scrolls to the specified section.
  */
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
   if (section) {
     window.scrollTo({
-      top: section.offsetTop - 60, // offset for fixed header
-      behavior: "smooth",
+      top: section.offsetTop - 60, // Adjust for fixed header
+      behavior: "smooth"
     });
   }
 }
 
-// Optionally, highlight the active nav link on scroll
-window.addEventListener("scroll", () => {
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll("nav ul li a");
-  let currentSection = "";
+/**
+ * Opens the lightbox with the given image source.
+ * @param {string} src - The source URL of the image.
+ */
+function openLightbox(src) {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  lightboxImg.src = src;
+  lightbox.style.display = "flex";
+}
 
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 80; // offset for fixed header
-    if (pageYOffset >= sectionTop) {
-      currentSection = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach((link) => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === `#${currentSection}`) {
-      link.classList.add("active");
-    }
-  });
-});
+/**
+ * Closes the lightbox.
+ * @param {Event} [e] - Optional event parameter to prevent propagation.
+ */
+function closeLightbox(e) {
+  if (e) {
+    e.stopPropagation(); // Prevent click from bubbling
+  }
+  document.getElementById("lightbox").style.display = "none";
+}
