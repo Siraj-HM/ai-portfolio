@@ -7,21 +7,16 @@
   box-sizing: border-box;
 }
 
-/* Root Variables for Neon Vibes */
+/* Root Variables for Deep Blue Theme */
 :root {
   --primary-color: #00ffff;       /* Electric cyan */
   --secondary-color: #ff007f;     /* Neon pink */
   --accent-color: #39ff14;        /* Neon green */
   --text-color: #ffffff;          /* White text */
-  --background-color: #121212;    /* Dark background */
-  --header-bg: #1a1a1a;           /* Near-black header */
-  --font-family: 'Roboto', sans-serif;
-  --gradient-bg: linear-gradient(
-    45deg,
-    rgba(0, 24, 36, 0.95),
-    rgba(18, 18, 18, 0.98),
-    rgba(36, 0, 30, 0.95)
-  );
+  --background-color: #000000;    /* Pure black background */
+  --header-bg: #000000;          /* Black header */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
 }
 
 /* Animated Background */
@@ -39,11 +34,14 @@
 
 /* Global Styles */
 body {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
+  font-weight: 400;
   color: var(--text-color);
   line-height: 1.6;
   background: var(--background-color);
   position: relative;
+  min-height: 100vh;
+  margin: 0;
 }
 
 body::before {
@@ -56,11 +54,12 @@ body::before {
   pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   z-index: -1;
+  opacity: 0.5;
 }
 
 /* Header & Navigation */
 header {
-  background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(42, 42, 42, 0.95));
+  background: rgba(0, 0, 0, 0.95);
   padding: 0.5rem 2rem;
   position: fixed;
   width: 100%;
@@ -86,8 +85,10 @@ header {
 }
 
 .logo-text {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0;
   font-size: 1.8rem;
-  font-weight: bold;
   background: linear-gradient(120deg, var(--primary-color), var(--secondary-color), var(--accent-color));
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -115,9 +116,11 @@ nav ul {
 }
 
 .nav-link {
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.02em;
   color: var(--text-color);
   text-decoration: none;
-  font-weight: 500;
   position: relative;
   padding: 0.5rem 0;
   transition: color 0.3s ease;
@@ -211,6 +214,9 @@ nav ul {
 }
 
 .hero-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.03em;
   font-size: 4rem;
   margin-bottom: 0.5rem;
   background: linear-gradient(120deg, 
@@ -316,6 +322,11 @@ section h2 {
 }
 
 .section-intro {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.9;
   text-align: center;
   margin-bottom: 3rem;
   color: var(--text-color);
@@ -334,15 +345,16 @@ section h2 {
 }
 
 .filter-btn {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  letter-spacing: 0.01em;
   background: transparent;
   color: var(--text-color);
   border: none;
   padding: 0.8rem 1.5rem;
-  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
-  letter-spacing: 1px;
 }
 
 .filter-btn::after {
@@ -416,10 +428,12 @@ section h2 {
 }
 
 .work-card h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--primary-color);
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  font-weight: 600;
 }
 
 .work-card p {
@@ -600,8 +614,10 @@ section h2 {
 }
 
 .timeline-date {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  letter-spacing: 0.02em;
   min-width: 120px;
-  font-weight: bold;
   color: var(--secondary-color);
   text-shadow: 0 0 5px var(--secondary-color);
 }
@@ -721,7 +737,8 @@ section h2 {
   border-radius: 6px;
   background: rgba(0, 0, 0, 0.2);
   color: var(--text-color);
-  font-family: var(--font-family);
+  font-family: var(--font-body);
+  font-weight: 400;
   transition: all 0.3s ease;
 }
 
@@ -739,13 +756,15 @@ section h2 {
 }
 
 .submit-btn {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  letter-spacing: 0.04em;
   background: var(--primary-color);
   color: var(--background-color);
   border: none;
   padding: 1rem 2rem;
   border-radius: 6px;
   cursor: pointer;
-  font-weight: bold;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -861,11 +880,13 @@ footer {
 }
 
 .load-more-btn {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  letter-spacing: 0.04em;
   background: transparent;
   color: var(--primary-color);
   border: 2px solid var(--primary-color);
   padding: 1rem 2.5rem;
-  font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.3s ease;
   border-radius: 30px;
@@ -919,4 +940,11 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Typography Base Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
