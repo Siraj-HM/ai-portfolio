@@ -2,6 +2,7 @@
 
 /**
  * Smoothly scrolls to the specified section.
+ * @param {string} sectionId - The ID of the target section.
  */
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
