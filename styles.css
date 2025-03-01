@@ -83,7 +83,7 @@ nav a:hover {
 /* Hero Section */
 #hero {
   height: 100vh;
-  background: url('https://via.placeholder.com/1200x800') center/cover no-repeat;
+  background: url('https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png') center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
