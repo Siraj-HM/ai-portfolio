@@ -7,16 +7,21 @@
   box-sizing: border-box;
 }
 
-/* Root Variables for Deep Blue Theme */
+/* Root Variables for Neon Vibes */
 :root {
   --primary-color: #00ffff;       /* Electric cyan */
   --secondary-color: #ff007f;     /* Neon pink */
   --accent-color: #39ff14;        /* Neon green */
   --text-color: #ffffff;          /* White text */
-  --background-color: #000000;    /* Pure black background */
-  --header-bg: #000000;          /* Black header */
-  --font-heading: 'Space Grotesk', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --background-color: #121212;    /* Dark background */
+  --header-bg: #1a1a1a;           /* Near-black header */
+  --font-family: 'Roboto', sans-serif;
+  --gradient-bg: linear-gradient(
+    45deg,
+    rgba(0, 24, 36, 0.95),
+    rgba(18, 18, 18, 0.98),
+    rgba(36, 0, 30, 0.95)
+  );
 }
 
 /* Animated Background */
@@ -34,14 +39,11 @@
 
 /* Global Styles */
 body {
-  font-family: var(--font-body);
-  font-weight: 400;
+  font-family: var(--font-family);
   color: var(--text-color);
   line-height: 1.6;
   background: var(--background-color);
   position: relative;
-  min-height: 100vh;
-  margin: 0;
 }
 
 body::before {
@@ -54,12 +56,11 @@ body::before {
   pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   z-index: -1;
-  opacity: 0.5;
 }
 
 /* Header & Navigation */
 header {
-  background: rgba(0, 0, 0, 0.95);
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(42, 42, 42, 0.95));
   padding: 0.5rem 2rem;
   position: fixed;
   width: 100%;
@@ -85,10 +86,8 @@ header {
 }
 
 .logo-text {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  letter-spacing: 0;
   font-size: 1.8rem;
+  font-weight: bold;
   background: linear-gradient(120deg, var(--primary-color), var(--secondary-color), var(--accent-color));
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -116,11 +115,9 @@ nav ul {
 }
 
 .nav-link {
-  font-family: var(--font-body);
-  font-weight: 500;
-  letter-spacing: 0.02em;
   color: var(--text-color);
   text-decoration: none;
+  font-weight: 500;
   position: relative;
   padding: 0.5rem 0;
   transition: color 0.3s ease;
@@ -214,9 +211,6 @@ nav ul {
 }
 
 .hero-name {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  letter-spacing: -0.03em;
   font-size: 4rem;
   margin-bottom: 0.5rem;
   background: linear-gradient(120deg, 
@@ -322,11 +316,6 @@ section h2 {
 }
 
 .section-intro {
-  font-family: var(--font-body);
-  font-weight: 400;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  opacity: 0.9;
   text-align: center;
   margin-bottom: 3rem;
   color: var(--text-color);
@@ -345,16 +334,15 @@ section h2 {
 }
 
 .filter-btn {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  letter-spacing: 0.01em;
   background: transparent;
   color: var(--text-color);
   border: none;
   padding: 0.8rem 1.5rem;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
+  letter-spacing: 1px;
 }
 
 .filter-btn::after {
@@ -428,12 +416,10 @@ section h2 {
 }
 
 .work-card h3 {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  letter-spacing: -0.01em;
   color: var(--primary-color);
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .work-card p {
@@ -538,6 +524,25 @@ section h2 {
   width: 300px;
   height: 300px;
   margin-right: 1rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 255, 255, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
 }
 
 .gallery-item img {
@@ -549,7 +554,7 @@ section h2 {
   box-shadow: 0 0 10px var(--primary-color);
 }
 
-.gallery-item img:hover {
+.gallery-item:hover img {
   transform: scale(1.05);
   box-shadow: 0 0 15px var(--secondary-color);
 }
@@ -614,10 +619,8 @@ section h2 {
 }
 
 .timeline-date {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  letter-spacing: 0.02em;
   min-width: 120px;
+  font-weight: bold;
   color: var(--secondary-color);
   text-shadow: 0 0 5px var(--secondary-color);
 }
@@ -737,8 +740,7 @@ section h2 {
   border-radius: 6px;
   background: rgba(0, 0, 0, 0.2);
   color: var(--text-color);
-  font-family: var(--font-body);
-  font-weight: 400;
+  font-family: var(--font-family);
   transition: all 0.3s ease;
 }
 
@@ -756,15 +758,13 @@ section h2 {
 }
 
 .submit-btn {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  letter-spacing: 0.04em;
   background: var(--primary-color);
   color: var(--background-color);
   border: none;
   padding: 1rem 2rem;
   border-radius: 6px;
   cursor: pointer;
+  font-weight: bold;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -821,19 +821,34 @@ footer {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0, 0, 0, 0.95);
   justify-content: center;
   align-items: center;
+  cursor: zoom-out;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-#lightbox .lightbox-content {
+#lightbox.show {
+  opacity: 1;
+}
+
+.lightbox-content {
   max-width: 90%;
-  max-height: 90%;
-  display: block;
-  margin: auto;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+  cursor: default;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
 }
 
-#lightbox .close {
+#lightbox.show .lightbox-content {
+  transform: scale(1);
+}
+
+.close {
   position: absolute;
   top: 20px;
   right: 35px;
@@ -841,11 +856,14 @@ footer {
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  z-index: 1001;
 }
 
-#lightbox .close:hover {
-  color: #bbb;
+.close:hover {
+  color: var(--primary-color);
+  transform: scale(1.1);
 }
 
 /* Responsive */
@@ -880,13 +898,11 @@ footer {
 }
 
 .load-more-btn {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  letter-spacing: 0.04em;
   background: transparent;
   color: var(--primary-color);
   border: 2px solid var(--primary-color);
   padding: 1rem 2.5rem;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.3s ease;
   border-radius: 30px;
@@ -942,9 +958,299 @@ footer {
   }
 }
 
-/* Typography Base Styles */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  letter-spacing: -0.02em;
+.lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1002;
+}
+
+.lightbox-nav:hover {
+  background: rgba(0, 255, 255, 0.3);
+  color: var(--primary-color);
+  box-shadow: 0 0 15px var(--primary-color);
+}
+
+.lightbox-nav.prev {
+  left: 20px;
+}
+
+.lightbox-nav.next {
+  right: 20px;
+}
+
+@media (max-width: 768px) {
+  .lightbox-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .lightbox-nav.prev {
+    left: 10px;
+  }
+  
+  .lightbox-nav.next {
+    right: 10px;
+  }
+}
+
+/* VIDEO GALLERY SECTION */
+#video-gallery {
+  padding: 3rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.video-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.video-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(31, 31, 31, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  aspect-ratio: 16/9;
+}
+
+.video-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px var(--primary-color);
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* For portrait videos, maintain aspect ratio but center content */
+.video-item.portrait .video-thumbnail {
+  object-position: center;
+}
+
+/* Add a subtle gradient overlay to improve text readability */
+.video-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, 
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.4)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-item:hover::before {
+  opacity: 1;
+}
+
+.video-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(to top, 
+    rgba(0,0,0,0.9) 0%,
+    rgba(0,0,0,0.7) 50%,
+    transparent 100%
+  );
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.video-item:hover .video-overlay {
+  transform: translateY(0);
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 70px;
+  height: 70px;
+  background: rgba(0, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease;
+  opacity: 0;
+  backdrop-filter: blur(4px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.play-button svg {
+  width: 35px;
+  height: 35px;
+  filter: drop-shadow(0 0 5px var(--primary-color));
+}
+
+.video-item:hover .play-button {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  background: rgba(0, 255, 255, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .video-gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .play-button {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 60px;
+    height: 60px;
+  }
+
+  .video-overlay {
+    transform: translateY(0);
+    padding: 1rem;
+    background: linear-gradient(to top, 
+      rgba(0,0,0,0.9) 0%,
+      rgba(0,0,0,0.6) 100%
+    );
+  }
+
+  .video-overlay h3 {
+    font-size: 1.1rem;
+  }
+
+  .video-overlay p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Video Modal */
+.video-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-modal.show {
+  display: flex;
+  opacity: 1;
+}
+
+.video-modal .close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  z-index: 1001;
+}
+
+.video-modal .close:hover {
+  color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.video-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.video-modal.show .video-modal-content {
+  transform: scale(1);
+}
+
+.video-modal-content video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+}
+
+/* Handle portrait videos in modal */
+.video-modal-content.portrait {
+  width: auto;
+  height: 90vh;
+  max-width: none;
+  aspect-ratio: auto;
+}
+
+.video-modal-content.portrait video {
+  width: auto;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* Hide video items initially */
+.video-item {
+  display: none;
+}
+
+/* Show first four videos */
+.video-item:nth-child(-n+4) {
+  display: block;
+}
+
+/* Animation for revealing videos */
+@keyframes revealVideo {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.video-item.show {
+  display: block;
+  animation: revealVideo 0.5s ease forwards;
 }

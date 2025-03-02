@@ -14,6 +14,10 @@ function scrollToSection(sectionId) {
   }
 }
 
+// Track current image index for lightbox navigation
+let currentImageIndex = 0;
+let galleryImages = [];
+
 /**
  * Opens the lightbox with the given image source.
  * @param {string} src - The source URL of the image.
@@ -21,8 +25,28 @@ function scrollToSection(sectionId) {
 function openLightbox(src) {
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
+  
+  // Update gallery images array
+  galleryImages = Array.from(document.querySelectorAll('.gallery-item img')).map(img => img.src);
+  currentImageIndex = galleryImages.indexOf(src);
+  
+  // Set the image source
   lightboxImg.src = src;
+  
+  // Show the lightbox with flex display
   lightbox.style.display = "flex";
+  
+  // Trigger reflow to enable transition
+  lightbox.offsetHeight;
+  
+  // Add show class for transition
+  lightbox.classList.add("show");
+  
+  // Prevent body scrolling when lightbox is open
+  document.body.style.overflow = "hidden";
+  
+  // Add keyboard event listener
+  document.addEventListener('keydown', handleLightboxKeyPress);
 }
 
 /**
@@ -33,7 +57,62 @@ function closeLightbox(e) {
   if (e) {
     e.stopPropagation(); // Prevent click from bubbling
   }
-  document.getElementById("lightbox").style.display = "none";
+  const lightbox = document.getElementById("lightbox");
+  
+  // Remove show class to trigger transition
+  lightbox.classList.remove("show");
+  
+  // Wait for transition to complete before hiding
+  setTimeout(() => {
+    lightbox.style.display = "none";
+  }, 300);
+  
+  // Restore body scrolling
+  document.body.style.overflow = "";
+  
+  // Remove keyboard event listener
+  document.removeEventListener('keydown', handleLightboxKeyPress);
+}
+
+/**
+ * Navigates through images in the lightbox
+ * @param {string} direction - Direction to navigate ('prev' or 'next')
+ * @param {Event} e - The event object
+ */
+function navigateLightbox(direction, e) {
+  e.stopPropagation(); // Prevent lightbox from closing
+  
+  if (direction === 'prev') {
+    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+  } else {
+    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+  }
+  
+  const lightboxImg = document.getElementById("lightbox-img");
+  lightboxImg.style.opacity = '0';
+  
+  setTimeout(() => {
+    lightboxImg.src = galleryImages[currentImageIndex];
+    lightboxImg.style.opacity = '1';
+  }, 200);
+}
+
+/**
+ * Handles keyboard events for the lightbox
+ * @param {KeyboardEvent} e - The keyboard event
+ */
+function handleLightboxKeyPress(e) {
+  switch(e.key) {
+    case "Escape":
+      closeLightbox();
+      break;
+    case "ArrowLeft":
+      navigateLightbox('prev', new Event('keypress'));
+      break;
+    case "ArrowRight":
+      navigateLightbox('next', new Event('keypress'));
+      break;
+  }
 }
 
 /**
@@ -249,3 +328,132 @@ style.textContent = `
     }
 }`;
 document.head.appendChild(style);
+
+// Initialize gallery functionality
+document.addEventListener('DOMContentLoaded', () => {
+  // Add click handlers to all gallery images
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  galleryItems.forEach(item => {
+    const img = item.querySelector('img');
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openLightbox(img.src);
+    });
+  });
+  
+  // Add click handler to lightbox for closing
+  const lightbox = document.getElementById('lightbox');
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      closeLightbox(e);
+    }
+  });
+});
+
+// Video Gallery Functionality
+function openVideoModal(videoSrc, isPortrait = false) {
+  // Create modal if it doesn't exist
+  let modal = document.querySelector('.video-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.className = 'video-modal';
+    modal.innerHTML = `
+      <div class="video-modal-content">
+        <video controls>
+          <source src="" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <span class="close" onclick="closeVideoModal()">&times;</span>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  }
+
+  const videoElement = modal.querySelector('video');
+  const modalContent = modal.querySelector('.video-modal-content');
+  
+  // Set video source
+  videoElement.src = videoSrc;
+  
+  // Add portrait class if needed
+  modalContent.classList.toggle('portrait', isPortrait);
+  
+  // Show modal
+  modal.classList.add('show');
+  document.body.style.overflow = 'hidden';
+  
+  // Add event listener for closing modal
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeVideoModal();
+    }
+  });
+  
+  // Add keyboard event listener
+  document.addEventListener('keydown', handleVideoModalKeyPress);
+}
+
+function closeVideoModal() {
+  const modal = document.querySelector('.video-modal');
+  if (modal) {
+    const video = modal.querySelector('video');
+    video.pause();
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', handleVideoModalKeyPress);
+  }
+}
+
+function handleVideoModalKeyPress(e) {
+  if (e.key === 'Escape') {
+    closeVideoModal();
+  }
+}
+
+// Initialize video gallery functionality
+document.addEventListener('DOMContentLoaded', () => {
+  // Existing initialization code...
+
+  // Add click handlers to video items
+  const videoItems = document.querySelectorAll('.video-item');
+  videoItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const isPortrait = item.classList.contains('portrait');
+      // For demo, we'll use a placeholder video URL
+      // Replace this with actual video URLs in production
+      const videoUrl = isPortrait ? 
+        'path/to/portrait-video.mp4' : 
+        'path/to/landscape-video.mp4';
+      openVideoModal(videoUrl, isPortrait);
+    });
+  });
+});
+
+// Video Gallery Load More
+document.addEventListener('DOMContentLoaded', function() {
+  const loadMoreVideosBtn = document.getElementById('loadMoreVideosBtn');
+  const videoItems = document.querySelectorAll('.video-item');
+  const videosPerLoad = 4;
+  let currentlyShowingVideos = videosPerLoad;
+
+  // Hide load more button if there are fewer videos than the initial display amount
+  if (videoItems.length <= videosPerLoad) {
+    loadMoreVideosBtn.style.display = 'none';
+  }
+
+  loadMoreVideosBtn.addEventListener('click', function() {
+    // Show next set of videos
+    for (let i = currentlyShowingVideos; i < currentlyShowingVideos + videosPerLoad && i < videoItems.length; i++) {
+      videoItems[i].classList.add('show');
+    }
+
+    // Update counter
+    currentlyShowingVideos += videosPerLoad;
+
+    // Hide button if all videos are shown
+    if (currentlyShowingVideos >= videoItems.length) {
+      loadMoreVideosBtn.style.display = 'none';
+    }
+  });
+});
