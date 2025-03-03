@@ -185,12 +185,13 @@ nav ul {
 
 /* HERO SECTION */
 #hero {
-  height: 100vh;
+  height: 60vh;
+  min-height: 400px;
   background: url('https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png') center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 5rem; /* offset for fixed header */
+  padding-top: 5rem;
   text-align: center;
   position: relative;
 }
@@ -211,7 +212,7 @@ nav ul {
 }
 
 .hero-name {
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin-bottom: 0.5rem;
   background: linear-gradient(120deg, 
     var(--primary-color), 
@@ -244,9 +245,9 @@ nav ul {
 }
 
 .hero-content p {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: var(--text-color);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   letter-spacing: 1px;
 }
 
