@@ -1562,27 +1562,27 @@ img.loaded {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
-.author-image {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--primary-color);
+.author-icon {
+  font-size: 2rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .author-info h4 {
-  color: var(--primary-color);
+  color: var(--text-color);
   margin: 0;
   font-size: 1.1rem;
 }
 
 .author-info span {
-  color: var(--text-color);
+  color: var(--text-secondary);
   font-size: 0.9rem;
-  opacity: 0.8;
 }
 
 @media (max-width: 768px) {
