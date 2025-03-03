@@ -420,12 +420,12 @@ document.addEventListener('DOMContentLoaded', () => {
   videoItems.forEach(item => {
     item.addEventListener('click', () => {
       const isPortrait = item.classList.contains('portrait');
-      // For demo, we'll use a placeholder video URL
-      // Replace this with actual video URLs in production
-      const videoUrl = isPortrait ? 
-        'path/to/portrait-video.mp4' : 
-        'path/to/landscape-video.mp4';
-      openVideoModal(videoUrl, isPortrait);
+      const videoUrl = item.getAttribute('data-video-url'); // Get URL from data attribute
+      if (videoUrl) {
+        openVideoModal(videoUrl, isPortrait);
+      } else {
+        console.error('No video URL found for this item');
+      }
     });
   });
 });
