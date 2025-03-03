@@ -595,24 +595,31 @@ document.querySelectorAll('section:not(#hero)').forEach(section => {
 // Make hero section visible immediately
 document.querySelector('#hero')?.classList.add('visible');
 
-// Navigation active states
+// Update active navigation link based on scroll position
 const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
 
-window.addEventListener('scroll', () => {
-  const scrollY = window.pageYOffset;
-  
+function updateActiveNavLink() {
+  const scrollPosition = window.scrollY + 100; // Offset for better accuracy
+
   sections.forEach(section => {
+    const sectionTop = section.offsetTop;
     const sectionHeight = section.offsetHeight;
-    const sectionTop = section.offsetTop - 100;
     const sectionId = section.getAttribute('id');
     
-    if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document.querySelector(`.nav-link[href*=${sectionId}]`)?.classList.add('active');
-    } else {
-      document.querySelector(`.nav-link[href*=${sectionId}]`)?.classList.remove('active');
+    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${sectionId}`) {
+          link.classList.add('active');
+        }
+      });
     }
   });
-});
+}
+
+window.addEventListener('scroll', updateActiveNavLink);
+window.addEventListener('load', updateActiveNavLink);
 
 // Image loading animations
 function handleImageLoading() {
@@ -637,3 +644,22 @@ function handleImageLoading() {
 }
 
 document.addEventListener('DOMContentLoaded', handleImageLoading);
+
+// Smooth scroll behavior
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    if (targetId === '#') return;
+    
+    const targetElement = document.querySelector(targetId);
+    const headerOffset = 80; // Height of fixed header
+    const elementPosition = targetElement.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  });
+});

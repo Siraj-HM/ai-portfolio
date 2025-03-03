@@ -55,925 +55,931 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- HEADER & NAVIGATION -->
-  <header>
-    <div class="header-container">
-      <div class="logo">
-        <span class="logo-text">SIRAJ HASSAN</span>
-        <span class="logo-dot"></span>
-      </div>
-    <nav>
-      <ul>
-          <li><a href="#hero" class="nav-link">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#work" class="nav-link">Work</a></li>
-          <li><a href="#gallery" class="nav-link">Gallery</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-    </nav>
-    </div>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section id="hero">
-    <div class="hero-content">
-      <h1 class="hero-name" data-text="SIRAJ HASSAN">SIRAJ HASSAN</h1>
-      <p class="hero-title">AI Artist & Creative Technologist</p>
-      <p class="hero-subtitle">Specializing in Custom AI Agents & Advanced AI Automation</p>
-      <button onclick="scrollToSection('work')">View My Work</button>
-    </div>
-  </section>
-
-  <!-- ABOUT SECTION (using square image1) -->
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="about-container">
-      <div class="about-text">
-        <p>
-          I am an AI artist and creative technologist at the forefront of generative visual AI and automation. With deep expertise in Stable Diffusion, Flux models, and custom workflow development, I specialize in creating advanced AI systems that combine visual generation with intelligent automation. My work spans from developing sophisticated AI image and video generation pipelines to building custom AI agents with voice capabilities. I help businesses transform their creative and operational workflows through cutting-edge AI integration, custom LoRA training, and automated content generation systems.
-        </p>
-      </div>
-      <div class="about-image">
-        <img
-          src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png"
-          alt="AI Artist Portrait"
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS SECTION -->
-  <section id="skills">
-    <h2>Core Competencies</h2>
-    <p class="section-intro">Primary tools and artistic capabilities in AI-driven content creation</p>
-    
-    <div class="skills-container">
-      <div class="skill-category">
-        <h3>Creation Tools</h3>
-        <div class="skill-items">
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>Stable Diffusion (SDXL, V1.5)</span>
-              <span>95%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 95%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>Flux Models (Pro, Ultra)</span>
-              <span>90%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 90%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>ComfyUI & Custom Nodes</span>
-              <span>85%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 85%"></div>
-            </div>
-          </div>
+  <div class="page-loader">
+    <div class="loader"></div>
+  </div>
+  
+  <div class="content">
+    <!-- HEADER & NAVIGATION -->
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <span class="logo-text">SIRAJ HASSAN</span>
+          <span class="logo-dot"></span>
         </div>
-      </div>
-
-      <div class="skill-category">
-        <h3>Advanced Techniques</h3>
-        <div class="skill-items">
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>LoRA Training & Fine-tuning</span>
-              <span>90%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 90%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>Video Generation (AnimateDiff)</span>
-              <span>85%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 85%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>LLM & Voice AI Integration</span>
-              <span>80%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 80%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="skill-category">
-        <h3>Creative Production</h3>
-        <div class="skill-items">
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>Workflow Automation</span>
-              <span>95%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 95%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>Video Editing & Motion</span>
-              <span>90%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 90%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>Creative Direction</span>
-              <span>85%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 85%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TECHNICAL PROFICIENCY -->
-  <section id="technical">
-    <h2>Technical Expertise</h2>
-    <p class="section-intro">Advanced capabilities in AI-driven content creation, language models, and creative production</p>
-    
-    <div class="technical-grid">
-      <div class="technical-card">
-        <h3>AI Image & Video Generation</h3>
-        <ul class="technical-list">
-          <li>Stable Diffusion (V1.5, SDXL) mastery</li>
-          <li>Flux Models (1.D, 1.S, Pro, Ultra)</li>
-          <li>Face swapping & voice cloning</li>
-          <li>ComfyUI workflow optimization</li>
+      <nav>
+        <ul>
+            <li><a href="#hero" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#work" class="nav-link">Work</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
+      </nav>
       </div>
+    </header>
 
-      <div class="technical-card">
-        <h3>AI Agents & Automation</h3>
-        <ul class="technical-list">
-          <li>Custom AI agents with voice integration</li>
-          <li>RAG implementation for knowledge bases</li>
-          <li>N8N, Zapier & Make automation flows</li>
-          <li>Twilio phone system integration</li>
-        </ul>
+    <!-- HERO SECTION -->
+    <section id="hero">
+      <div class="hero-content">
+        <h1 class="hero-name" data-text="SIRAJ HASSAN">SIRAJ HASSAN</h1>
+        <p class="hero-title">AI Artist & Creative Technologist</p>
+        <p class="hero-subtitle">Specializing in Custom AI Agents & Advanced AI Automation</p>
+        <button onclick="scrollToSection('work')">View My Work</button>
       </div>
+    </section>
 
-      <div class="technical-card">
-        <h3>Voice & Audio AI</h3>
-        <ul class="technical-list">
-          <li>Voice cloning & synthesis</li>
-          <li>Singer voice model training</li>
-          <li>Custom voice agent development</li>
-          <li>Multi-language voice support</li>
-        </ul>
-      </div>
-
-      <div class="technical-card">
-        <h3>Industry Solutions</h3>
-        <ul class="technical-list">
-          <li>Hotel & restaurant AI assistants</li>
-          <li>Healthcare virtual agents</li>
-          <li>Customer service automation</li>
-          <li>Custom business workflows</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- CERTIFICATIONS -->
-  <section id="certifications">
-    <h2>Professional Certifications</h2>
-    <p class="section-intro">Continuous learning and professional development in AI and creative technologies</p>
-    
-    <div class="cert-container">
-      <div class="cert-card">
-        <div class="cert-icon">🎓</div>
-        <div class="cert-content">
-          <h3>Stable Diffusion Advanced Training</h3>
-          <p>RunwayML Academy</p>
-          <span class="cert-date">2024</span>
+    <!-- ABOUT SECTION (using square image1) -->
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-container">
+        <div class="about-text">
+          <p>
+            I am an AI artist and creative technologist at the forefront of generative visual AI and automation. With deep expertise in Stable Diffusion, Flux models, and custom workflow development, I specialize in creating advanced AI systems that combine visual generation with intelligent automation. My work spans from developing sophisticated AI image and video generation pipelines to building custom AI agents with voice capabilities. I help businesses transform their creative and operational workflows through cutting-edge AI integration, custom LoRA training, and automated content generation systems.
+          </p>
+        </div>
+        <div class="about-image">
+          <img
+            src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png"
+            alt="AI Artist Portrait"
+          />
         </div>
       </div>
+    </section>
 
-      <div class="cert-card">
-        <div class="cert-icon">📜</div>
-        <div class="cert-content">
-          <h3>AI Art & Machine Learning</h3>
-          <p>Coursera - DeepLearning.AI</p>
-          <span class="cert-date">2023</span>
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+      <h2>Core Competencies</h2>
+      <p class="section-intro">Primary tools and artistic capabilities in AI-driven content creation</p>
+      
+      <div class="skills-container">
+        <div class="skill-category">
+          <h3>Creation Tools</h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Stable Diffusion (SDXL, V1.5)</span>
+                <span>95%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Flux Models (Pro, Ultra)</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>ComfyUI & Custom Nodes</span>
+                <span>85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Advanced Techniques</h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>LoRA Training & Fine-tuning</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Video Generation (AnimateDiff)</span>
+                <span>85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>LLM & Voice AI Integration</span>
+                <span>80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Creative Production</h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Workflow Automation</span>
+                <span>95%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Video Editing & Motion</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Creative Direction</span>
+                <span>85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="cert-card">
-        <div class="cert-icon">🏆</div>
-        <div class="cert-content">
-          <h3>Creative AI Specialization</h3>
-          <p>NVIDIA Deep Learning Institute</p>
-          <span class="cert-date">2023</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INDUSTRY WORK -->
-  <section id="industry-work">
-    <h2>Industry Solutions</h2>
-    <p class="section-intro">Specialized AI solutions across different industries</p>
-
-    <div class="industry-grid">
-      <div class="industry-card">
-        <div class="industry-content">
-          <h3>Generative Visual AI</h3>
-          <ul>
-            <li>Advanced image synthesis with SDXL & Flux</li>
-            <li>Custom LoRA model training</li>
-            <li>Video generation with AnimateDiff</li>
-            <li>Face swapping & style transfer</li>
+    <!-- TECHNICAL PROFICIENCY -->
+    <section id="technical">
+      <h2>Technical Expertise</h2>
+      <p class="section-intro">Advanced capabilities in AI-driven content creation, language models, and creative production</p>
+      
+      <div class="technical-grid">
+        <div class="technical-card">
+          <h3>AI Image & Video Generation</h3>
+          <ul class="technical-list">
+            <li>Stable Diffusion (V1.5, SDXL) mastery</li>
+            <li>Flux Models (1.D, 1.S, Pro, Ultra)</li>
+            <li>Face swapping & voice cloning</li>
+            <li>ComfyUI workflow optimization</li>
           </ul>
         </div>
-      </div>
 
-      <div class="industry-card">
-        <div class="industry-content">
-          <h3>AI Automation & Agents</h3>
-          <ul>
-            <li>Custom AI agents with voice capabilities</li>
-            <li>N8N & Zapier workflow automation</li>
-            <li>RAG-powered knowledge systems</li>
-            <li>Twilio phone integration</li>
+        <div class="technical-card">
+          <h3>AI Agents & Automation</h3>
+          <ul class="technical-list">
+            <li>Custom AI agents with voice integration</li>
+            <li>RAG implementation for knowledge bases</li>
+            <li>N8N, Zapier & Make automation flows</li>
+            <li>Twilio phone system integration</li>
           </ul>
         </div>
-      </div>
 
-      <div class="industry-card">
-        <div class="industry-content">
+        <div class="technical-card">
           <h3>Voice & Audio AI</h3>
-          <ul>
-            <li>Singer voice cloning & synthesis</li>
-            <li>Custom song generation</li>
-            <li>Multi-language voice agents</li>
-            <li>Real-time voice processing</li>
+          <ul class="technical-list">
+            <li>Voice cloning & synthesis</li>
+            <li>Singer voice model training</li>
+            <li>Custom voice agent development</li>
+            <li>Multi-language voice support</li>
           </ul>
         </div>
-      </div>
 
-      <div class="industry-card">
-        <div class="industry-content">
-          <h3>Sector Solutions</h3>
-          <ul>
+        <div class="technical-card">
+          <h3>Industry Solutions</h3>
+          <ul class="technical-list">
             <li>Hotel & restaurant AI assistants</li>
             <li>Healthcare virtual agents</li>
-            <li>Retail automation systems</li>
-            <li>Customer service AI integration</li>
+            <li>Customer service automation</li>
+            <li>Custom business workflows</li>
           </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- WORK SECTION -->
-  <section id="work">
-    <h2>My Work</h2>
-    <p class="section-intro">Explore my portfolio of AI-generated artworks and creative projects, showcasing the intersection of artificial intelligence and visual design.</p>
-    
-    <div class="filter-buttons">
-      <button class="filter-btn active" data-filter="all">All Projects</button>
-      <button class="filter-btn" data-filter="text-to-image">Text to Image</button>
-      <button class="filter-btn" data-filter="image-to-image">Style Transfer</button>
-      <button class="filter-btn" data-filter="video">AI Animation</button>
-      <button class="filter-btn" data-filter="character">Character Design</button>
-    </div>
-
-    <div class="work-grid">
-      <!-- Text to Image Projects (3) -->
-      <div class="work-card" data-category="text-to-image">
-        <div class="work-card-inner">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Dreamscape Generation">
-          <div class="work-card-overlay">
-            <h3>Dreamscape Generation</h3>
-            <p>Creating stunning landscapes and environments from textual descriptions using advanced AI models.</p>
-            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="work-card" data-category="text-to-image">
-        <div class="work-card-inner">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Fantasy World Creation">
-          <div class="work-card-overlay">
-            <h3>Fantasy World Creation</h3>
-            <p>Generating immersive fantasy worlds and mythical scenes through detailed text prompts and AI imagination.</p>
-            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="work-card" data-category="text-to-image">
-        <div class="work-card-inner">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Abstract Concepts">
-          <div class="work-card-overlay">
-            <h3>Abstract Concepts</h3>
-            <p>Visualizing abstract ideas and emotions through AI-generated artwork.</p>
-            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Style Transfer Projects (3) -->
-      <div class="work-card" data-category="image-to-image">
-        <div class="work-card-inner">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Artistic Style Transfer">
-          <div class="work-card-overlay">
-            <h3>Artistic Style Transfer</h3>
-            <p>Transforming photographs into unique artistic masterpieces using AI-powered style transfer techniques.</p>
-            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="work-card" data-category="image-to-image">
-        <div class="work-card-inner">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Neo-Classical Transformation">
-          <div class="work-card-overlay">
-            <h3>Neo-Classical Transformation</h3>
-            <p>Converting modern photographs into stunning neo-classical paintings using advanced style transfer algorithms.</p>
-            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="work-card" data-category="image-to-image">
-        <div class="work-card-inner">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Vintage Photo Restoration">
-          <div class="work-card-overlay">
-            <h3>Vintage Photo Restoration</h3>
-            <p>Restoring and enhancing old photographs using AI image processing techniques.</p>
-            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- AI Animation Projects (3) -->
-      <div class="work-card" data-category="video">
-        <div class="work-card-inner">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Dynamic AI Animation">
-          <div class="work-card-overlay">
-            <h3>Dynamic AI Animation</h3>
-            <p>Bringing still images to life with fluid motion and realistic animations powered by AI.</p>
-            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="work-card" data-category="video">
-        <div class="work-card-inner">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="AI Music Visualization">
-          <div class="work-card-overlay">
-            <h3>AI Music Visualization</h3>
-            <p>Creating dynamic visual experiences that respond to music using AI-powered animation techniques.</p>
-            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="work-card" data-category="video">
-        <div class="work-card-inner">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="AI Dance Generation">
-          <div class="work-card-overlay">
-            <h3>AI Dance Generation</h3>
-            <p>Creating fluid dance animations from static poses using AI motion synthesis.</p>
-            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Character Design Projects (3) -->
-      <div class="work-card" data-category="character">
-        <div class="work-card-inner">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="AI Character Creation">
-          <div class="work-card-overlay">
-            <h3>AI Character Creation</h3>
-            <p>Designing unique and expressive characters using advanced AI generation techniques.</p>
-            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="work-card" data-category="character">
-        <div class="work-card-inner">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Fantasy Character Design">
-          <div class="work-card-overlay">
-            <h3>Fantasy Character Design</h3>
-            <p>Creating unique fantasy characters with distinct personalities using AI-driven character generation.</p>
-            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="work-card" data-category="character">
-        <div class="work-card-inner">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Cyberpunk Characters">
-          <div class="work-card-overlay">
-            <h3>Cyberpunk Characters</h3>
-            <p>Designing futuristic cyberpunk characters with unique cybernetic enhancements.</p>
-            <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="load-more-container">
-      <button id="loadMoreBtn" class="load-more-btn">Load More Projects</button>
-    </div>
-  </section>
-
-  <!-- GALLERY SECTION (Horizontal scrollable gallery with lightbox) -->
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <p class="section-intro">Explore a collection of my latest AI-generated images.</p>
-    <div class="gallery-container">
-      <button class="gallery-nav prev" onclick="scrollGallery('left')">&lt;</button>
-    <div class="gallery-scroll">
-        <!-- Gallery Items 1-5 -->
-        <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 1">
-        </div>
-        <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Gallery Image 2">
-        </div>
-        <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 3">
-        </div>
-        <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Gallery Image 4">
-        </div>
-        <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 5">
-        </div>
-        <!-- Gallery Items 6-10 -->
-        <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Gallery Image 6">
-        </div>
-        <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 7">
-        </div>
-        <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Gallery Image 8">
-        </div>
-        <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 9">
-        </div>
-        <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Gallery Image 10">
-        </div>
-        <!-- Gallery Items 11-15 -->
-        <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 11">
-        </div>
-        <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Gallery Image 12">
-        </div>
-        <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 13">
-        </div>
-        <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Gallery Image 14">
-        </div>
-      <div class="gallery-item">
-          <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 15">
-        </div>
-      </div>
-      <button class="gallery-nav next" onclick="scrollGallery('right')">&gt;</button>
-    </div>
-  </section>
-
- <!-- VIDEO GALLERY SECTION -->
-  <section id="video-gallery">
-    <h2>Video Gallery</h2>
-    <p class="section-intro">Explore my collection of AI-generated videos and animations.</p>
-    
-    <div class="video-gallery-grid">
-      <!-- Initial Videos (First 4 remain visible) -->
-      <div class="video-item portrait" data-video-url="path/to/portrait-video-1.mp4">
-        <img src="images/portrait-1.png" alt="Portrait Video 1" class="video-thumbnail">
-        <div class="play-button">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-        </div>
-        <div class="video-overlay">
-          <h3>AI based Inpainting</h3>
-          <p>Generated using Stable Diffusion in ComfyUI</p>
-        </div>
-      </div>
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+      <h2>Professional Certifications</h2>
+      <p class="section-intro">Continuous learning and professional development in AI and creative technologies</p>
       
-      <div class="video-item landscape" data-video-url="https://siraj-hm.github.io/ai-portfolio/videos/video-1.mp4">
-        <img src="images/thumb-1.png" alt="Landscape Video 1" class="video-thumbnail">
-        <div class="play-button">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
+      <div class="cert-container">
+        <div class="cert-card">
+          <div class="cert-icon">🎓</div>
+          <div class="cert-content">
+            <h3>Stable Diffusion Advanced Training</h3>
+            <p>RunwayML Academy</p>
+            <span class="cert-date">2024</span>
+          </div>
         </div>
-        <div class="video-overlay">
-          <h3>AI based Inpainting</h3>
-          <p>Generated using Stable Diffusion in ComfyUI</p>
+
+        <div class="cert-card">
+          <div class="cert-icon">📜</div>
+          <div class="cert-content">
+            <h3>AI Art & Machine Learning</h3>
+            <p>Coursera - DeepLearning.AI</p>
+            <span class="cert-date">2023</span>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon">🏆</div>
+          <div class="cert-content">
+            <h3>Creative AI Specialization</h3>
+            <p>NVIDIA Deep Learning Institute</p>
+            <span class="cert-date">2023</span>
+          </div>
         </div>
       </div>
+    </section>
+
+    <!-- INDUSTRY WORK -->
+    <section id="industry-work">
+      <h2>Industry Solutions</h2>
+      <p class="section-intro">Specialized AI solutions across different industries</p>
+
+      <div class="industry-grid">
+        <div class="industry-card">
+          <div class="industry-content">
+            <h3>Generative Visual AI</h3>
+            <ul>
+              <li>Advanced image synthesis with SDXL & Flux</li>
+              <li>Custom LoRA model training</li>
+              <li>Video generation with AnimateDiff</li>
+              <li>Face swapping & style transfer</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="industry-card">
+          <div class="industry-content">
+            <h3>AI Automation & Agents</h3>
+            <ul>
+              <li>Custom AI agents with voice capabilities</li>
+              <li>N8N & Zapier workflow automation</li>
+              <li>RAG-powered knowledge systems</li>
+              <li>Twilio phone integration</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="industry-card">
+          <div class="industry-content">
+            <h3>Voice & Audio AI</h3>
+            <ul>
+              <li>Singer voice cloning & synthesis</li>
+              <li>Custom song generation</li>
+              <li>Multi-language voice agents</li>
+              <li>Real-time voice processing</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="industry-card">
+          <div class="industry-content">
+            <h3>Sector Solutions</h3>
+            <ul>
+              <li>Hotel & restaurant AI assistants</li>
+              <li>Healthcare virtual agents</li>
+              <li>Retail automation systems</li>
+              <li>Customer service AI integration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK SECTION -->
+    <section id="work">
+      <h2>My Work</h2>
+      <p class="section-intro">Explore my portfolio of AI-generated artworks and creative projects, showcasing the intersection of artificial intelligence and visual design.</p>
       
-      <div class="video-item portrait" data-video-url="path/to/portrait-video-2.mp4">
-        <img src="images/portrait-1.png" alt="Portrait Video 2" class="video-thumbnail">
-        <div class="play-button">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-        </div>
-        <div class="video-overlay">
-          <h3>Character Animation</h3>
-          <p>AI-powered motion synthesis</p>
-        </div>
-      </div>
-      
-      <div class="video-item landscape" data-video-url="path/to/landscape-video-2.mp4">
-        <img src="images/landscape-1.png" alt="Landscape Video 2" class="video-thumbnail">
-        <div class="play-button">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-        </div>
-        <div class="video-overlay">
-          <h3>Dynamic Scene</h3>
-          <p>Real-time AI rendering</p>
-        </div>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="text-to-image">Text to Image</button>
+        <button class="filter-btn" data-filter="image-to-image">Style Transfer</button>
+        <button class="filter-btn" data-filter="video">AI Animation</button>
+        <button class="filter-btn" data-filter="character">Character Design</button>
       </div>
 
-      <!-- Additional Videos (5-12) -->
-      <div class="video-item landscape" data-video-url="path/to/landscape-video-5.mp4">
-        <img src="images/landscape-1.png" alt="Landscape Video 5" class="video-thumbnail">
-        <div class="play-button">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
+      <div class="work-grid">
+        <!-- Text to Image Projects (3) -->
+        <div class="work-card" data-category="text-to-image">
+          <div class="work-card-inner">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Dreamscape Generation">
+            <div class="work-card-overlay">
+              <h3>Dreamscape Generation</h3>
+              <p>Creating stunning landscapes and environments from textual descriptions using advanced AI models.</p>
+              <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+            </div>
+          </div>
         </div>
-        <div class="video-overlay">
-          <h3>Sci-Fi Environment</h3>
-          <p>AI-generated futuristic worlds</p>
-        </div>
-      </div>
 
-      <div class="video-item portrait" data-video-url="path/to/portrait-video-5.mp4">
-        <img src="images/portrait-1.png" alt="Portrait Video 5" class="video-thumbnail">
-        <div class="play-button">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
+        <div class="work-card" data-category="text-to-image">
+          <div class="work-card-inner">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Fantasy World Creation">
+            <div class="work-card-overlay">
+              <h3>Fantasy World Creation</h3>
+              <p>Generating immersive fantasy worlds and mythical scenes through detailed text prompts and AI imagination.</p>
+              <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+            </div>
+          </div>
         </div>
-        <div class="video-overlay">
-          <h3>Character Emotions</h3>
-          <p>Deep learning emotion synthesis</p>
-        </div>
-      </div>
 
-      <div class="video-item landscape" data-video-url="path/to/landscape-video-6.mp4">
-        <img src="images/landscape-1.png" alt="Landscape Video 6" class="video-thumbnail">
-        <div class="play-button">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
+        <div class="work-card" data-category="text-to-image">
+          <div class="work-card-inner">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Abstract Concepts">
+            <div class="work-card-overlay">
+              <h3>Abstract Concepts</h3>
+              <p>Visualizing abstract ideas and emotions through AI-generated artwork.</p>
+              <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+            </div>
+          </div>
         </div>
-        <div class="video-overlay">
-          <h3>Dynamic Weather</h3>
-          <p>Real-time weather simulation</p>
-        </div>
-      </div>
 
-      <div class="video-item portrait" data-video-url="path/to/portrait-video-6.mp4">
-        <img src="images/portrait-1.png" alt="Portrait Video 6" class="video-thumbnail">
-        <div class="play-button">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
+        <!-- Style Transfer Projects (3) -->
+        <div class="work-card" data-category="image-to-image">
+          <div class="work-card-inner">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Artistic Style Transfer">
+            <div class="work-card-overlay">
+              <h3>Artistic Style Transfer</h3>
+              <p>Transforming photographs into unique artistic masterpieces using AI-powered style transfer techniques.</p>
+              <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+            </div>
+          </div>
         </div>
-        <div class="video-overlay">
-          <h3>Style Transfer</h3>
-          <p>Neural style animation</p>
-        </div>
-      </div>
 
-      <div class="video-item landscape" data-video-url="path/to/landscape-video-7.mp4">
-        <img src="images/landscape-1.png" alt="Landscape Video 7" class="video-thumbnail">
-        <div class="play-button">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
+        <div class="work-card" data-category="image-to-image">
+          <div class="work-card-inner">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Neo-Classical Transformation">
+            <div class="work-card-overlay">
+              <h3>Neo-Classical Transformation</h3>
+              <p>Converting modern photographs into stunning neo-classical paintings using advanced style transfer algorithms.</p>
+              <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+            </div>
+          </div>
         </div>
-        <div class="video-overlay">
-          <h3>Particle Systems</h3>
-          <p>AI-driven particle animations</p>
-        </div>
-      </div>
 
-      <div class="video-item portrait" data-video-url="path/to/portrait-video-7.mp4">
-        <img src="images/portrait-1.png" alt="Portrait Video 7" class="video-thumbnail">
-        <div class="play-button">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
+        <div class="work-card" data-category="image-to-image">
+          <div class="work-card-inner">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Vintage Photo Restoration">
+            <div class="work-card-overlay">
+              <h3>Vintage Photo Restoration</h3>
+              <p>Restoring and enhancing old photographs using AI image processing techniques.</p>
+              <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+            </div>
+          </div>
         </div>
-        <div class="video-overlay">
-          <h3>Motion Capture</h3>
-          <p>AI motion reconstruction</p>
-        </div>
-      </div>
 
-      <div class="video-item landscape" data-video-url="path/to/landscape-video-8.mp4">
-        <img src="images/landscape-1.png" alt="Landscape Video 8" class="video-thumbnail">
-        <div class="play-button">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
+        <!-- AI Animation Projects (3) -->
+        <div class="work-card" data-category="video">
+          <div class="work-card-inner">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Dynamic AI Animation">
+            <div class="work-card-overlay">
+              <h3>Dynamic AI Animation</h3>
+              <p>Bringing still images to life with fluid motion and realistic animations powered by AI.</p>
+              <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+            </div>
+          </div>
         </div>
-        <div class="video-overlay">
-          <h3>Light Simulation</h3>
-          <p>Neural rendering with dynamic lighting</p>
-        </div>
-      </div>
 
-      <div class="video-item portrait" data-video-url="path/to/portrait-video-8.mp4">
-        <img src="images/portrait-1.png" alt="Portrait Video 8" class="video-thumbnail">
-        <div class="play-button">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
+        <div class="work-card" data-category="video">
+          <div class="work-card-inner">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="AI Music Visualization">
+            <div class="work-card-overlay">
+              <h3>AI Music Visualization</h3>
+              <p>Creating dynamic visual experiences that respond to music using AI-powered animation techniques.</p>
+              <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+            </div>
+          </div>
         </div>
-        <div class="video-overlay">
-          <h3>Character Interaction</h3>
-          <p>AI-powered character dynamics</p>
+
+        <div class="work-card" data-category="video">
+          <div class="work-card-inner">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="AI Dance Generation">
+            <div class="work-card-overlay">
+              <h3>AI Dance Generation</h3>
+              <p>Creating fluid dance animations from static poses using AI motion synthesis.</p>
+              <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Video Load More Button -->
-    <div class="load-more-container">
-      <button id="loadMoreVideosBtn" class="load-more-btn">Load More Videos</button>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE SECTION -->
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="timeline">
-      <!-- AI Artist at Herogram -->
-      <div class="timeline-item">
-        <div class="timeline-date">Oct 2023 – Present</div>
-        <div class="timeline-content">
-          <h3>AI Artist</h3>
-          <h4>HEROGRAM FZ LLC, Dubai, UAE</h4>
-          <ul>
-            <li>Developed high-quality AI-generated content using Stable Diffusion and Flux models within ComfyUI</li>
-            <li>Created AI-powered video content using Animate Diff and Hunyuan Video AI</li>
-            <li>Engineered AI-based backend systems for garment apps using Meta AI's Segment Anything</li>
-            <li>Implemented advanced AI techniques for short animated film production</li>
-            <li>Optimized system prompts for various video AI models including Kling AI and Luma Dream</li>
-          </ul>
+        <!-- Character Design Projects (3) -->
+        <div class="work-card" data-category="character">
+          <div class="work-card-inner">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="AI Character Creation">
+            <div class="work-card-overlay">
+              <h3>AI Character Creation</h3>
+              <p>Designing unique and expressive characters using advanced AI generation techniques.</p>
+              <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <!-- Freelance AI Artist -->
-      <div class="timeline-item">
-        <div class="timeline-date">Aug 2022 – Aug 2023</div>
-        <div class="timeline-content">
-          <h3>Freelance AI Artist</h3>
-          <h4>Self-Employed, Global</h4>
-          <ul>
-            <li>Generated 50+ client-specific artworks using MidJourney and Stable Diffusion</li>
-            <li>Created viral AI content with over 1M views across platforms</li>
-            <li>Developed custom ComfyUI workflows for efficient content production</li>
-            <li>Engaged in Web3 ecosystem through NFT publishing and collection</li>
-          </ul>
+        <div class="work-card" data-category="character">
+          <div class="work-card-inner">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Fantasy Character Design">
+            <div class="work-card-overlay">
+              <h3>Fantasy Character Design</h3>
+              <p>Creating unique fantasy characters with distinct personalities using AI-driven character generation.</p>
+              <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <!-- Content Producer -->
-      <div class="timeline-item">
-        <div class="timeline-date">Jun 2012 – Aug 2022</div>
-        <div class="timeline-content">
-          <h3>Content Producer - Photo and Video</h3>
-          <h4>FoneArena India Private Limited, Chennai, India</h4>
-          <ul>
-            <li>Directed video teams at international tech events (MWC Barcelona, IFA Berlin)</li>
-            <li>Grew YouTube channel views by 25% through optimized content strategies</li>
-            <li>Conducted interviews with industry leaders from Qualcomm, Samsung, and Nokia</li>
-            <li>Led creative content strategy and video optimization across platforms</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Software Developer -->
-      <div class="timeline-item">
-        <div class="timeline-date">Aug 2010 – May 2012</div>
-        <div class="timeline-content">
-          <h3>Software Developer</h3>
-          <h4>FoneArena India Private Limited, Chennai, India</h4>
-          <ul>
-            <li>Managed backend servers using SQL and WordPress CMS</li>
-            <li>Developed user-interactive web portals with PHP</li>
-            <li>Maintained database of 5,000+ phone specifications</li>
-            <li>Optimized SEO for enhanced web visibility</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS SECTION -->
-  <section id="testimonials">
-    <h2>Client Testimonials</h2>
-    <p class="section-intro">What clients say about working with me</p>
-    
-    <div class="testimonials-container">
-      <div class="testimonial-card">
-        <div class="testimonial-content">
-          <div class="quote-icon">❝</div>
-          <p>"Siraj's expertise in AI art generation and custom workflow development transformed our content creation process. His automated pipelines helped us scale our production while maintaining consistent brand quality."</p>
-          <div class="testimonial-author">
-            <div class="author-icon">👩‍💼</div>
-            <div class="author-info">
-              <h4>Sarah Johnson</h4>
-              <span>Creative Director, ArtTech Studios</span>
+        <div class="work-card" data-category="character">
+          <div class="work-card-inner">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Cyberpunk Characters">
+            <div class="work-card-overlay">
+              <h3>Cyberpunk Characters</h3>
+              <p>Designing futuristic cyberpunk characters with unique cybernetic enhancements.</p>
+              <button class="view-project" onclick="openLightbox(this.closest('.work-card').querySelector('img').src)">View Project</button>
             </div>
           </div>
         </div>
       </div>
+      
+      <div class="load-more-container">
+        <button id="loadMoreBtn" class="load-more-btn">Load More Projects</button>
+      </div>
+    </section>
 
-      <div class="testimonial-card">
-        <div class="testimonial-content">
-          <div class="quote-icon">❝</div>
-          <p>"The custom ComfyUI workflows Siraj developed for our team revolutionized our content pipeline. His deep understanding of AI models and automation helped us achieve consistent, high-quality results at scale."</p>
-          <div class="testimonial-author">
-            <div class="author-icon">👨‍💼</div>
-            <div class="author-info">
-              <h4>Michael Chen</h4>
-              <span>Product Manager, InnovateLab</span>
-            </div>
+    <!-- GALLERY SECTION (Horizontal scrollable gallery with lightbox) -->
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <p class="section-intro">Explore a collection of my latest AI-generated images.</p>
+      <div class="gallery-container">
+        <button class="gallery-nav prev" onclick="scrollGallery('left')">&lt;</button>
+      <div class="gallery-scroll">
+          <!-- Gallery Items 1-5 -->
+          <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 1">
+          </div>
+          <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Gallery Image 2">
+          </div>
+          <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 3">
+          </div>
+          <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Gallery Image 4">
+          </div>
+          <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 5">
+          </div>
+          <!-- Gallery Items 6-10 -->
+          <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Gallery Image 6">
+          </div>
+          <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 7">
+          </div>
+          <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Gallery Image 8">
+          </div>
+          <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 9">
+          </div>
+          <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Gallery Image 10">
+          </div>
+          <!-- Gallery Items 11-15 -->
+          <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 11">
+          </div>
+          <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Gallery Image 12">
+          </div>
+          <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 13">
+          </div>
+          <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image2.png" alt="Gallery Image 14">
+          </div>
+        <div class="gallery-item">
+            <img src="https://raw.githubusercontent.com/Siraj-HM/ai-portfolio/main/images/image1.png" alt="Gallery Image 15">
           </div>
         </div>
+        <button class="gallery-nav next" onclick="scrollGallery('right')">&gt;</button>
       </div>
+    </section>
 
-      <div class="testimonial-card">
-        <div class="testimonial-content">
-          <div class="quote-icon">❝</div>
-          <p>"Working with Siraj on our AI video project was exceptional. His expertise in AnimateDiff and Hunyuan AI, combined with custom workflow development, delivered outstanding results that exceeded our expectations."</p>
-          <div class="testimonial-author">
-            <div class="author-icon">👩‍🎨</div>
-            <div class="author-info">
-              <h4>Emily Rodriguez</h4>
-              <span>Art Director, DigitalDreams</span>
-            </div>
+   <!-- VIDEO GALLERY SECTION -->
+    <section id="video-gallery">
+      <h2>Video Gallery</h2>
+      <p class="section-intro">Explore my collection of AI-generated videos and animations.</p>
+      
+      <div class="video-gallery-grid">
+        <!-- Initial Videos (First 4 remain visible) -->
+        <div class="video-item portrait" data-video-url="path/to/portrait-video-1.mp4">
+          <img src="images/portrait-1.png" alt="Portrait Video 1" class="video-thumbnail">
+          <div class="play-button">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <div class="video-overlay">
+            <h3>AI based Inpainting</h3>
+            <p>Generated using Stable Diffusion in ComfyUI</p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT SECTION -->
-  <section id="contact">
-    <h2>Let's Create Together</h2>
-    <p class="section-intro">Ready to bring your ideas to life with AI?</p>
-    
-    <div class="contact-container">
-      <!-- Contact Info Cards -->
-      <div class="contact-info">
-        <a href="mailto:sirajhassan@live.com" class="contact-card">
-          <div class="contact-icon">📧</div>
-          <h3>Email</h3>
-          <span class="glow-link">sirajhassan@live.com</span>
-        </a>
         
-        <a href="https://www.linkedin.com/in/sirajsoft" target="_blank" rel="noopener noreferrer" class="contact-card">
-          <div class="contact-icon">💼</div>
-          <h3>LinkedIn</h3>
-          <span class="glow-link">linkedin.com/in/sirajsoft</span>
-        </a>
+        <div class="video-item landscape" data-video-url="https://siraj-hm.github.io/ai-portfolio/videos/video-1.mp4">
+          <img src="images/thumb-1.png" alt="Landscape Video 1" class="video-thumbnail">
+          <div class="play-button">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <div class="video-overlay">
+            <h3>AI based Inpainting</h3>
+            <p>Generated using Stable Diffusion in ComfyUI</p>
+          </div>
+        </div>
         
-        <a href="https://github.com/siraj-hm" target="_blank" rel="noopener noreferrer" class="contact-card">
-          <div class="contact-icon">💻</div>
-          <h3>GitHub</h3>
-          <span class="glow-link">github.com/siraj-hm</span>
-        </a>
+        <div class="video-item portrait" data-video-url="path/to/portrait-video-2.mp4">
+          <img src="images/portrait-1.png" alt="Portrait Video 2" class="video-thumbnail">
+          <div class="play-button">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <div class="video-overlay">
+            <h3>Character Animation</h3>
+            <p>AI-powered motion synthesis</p>
+          </div>
+        </div>
+        
+        <div class="video-item landscape" data-video-url="path/to/landscape-video-2.mp4">
+          <img src="images/landscape-1.png" alt="Landscape Video 2" class="video-thumbnail">
+          <div class="play-button">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <div class="video-overlay">
+            <h3>Dynamic Scene</h3>
+            <p>Real-time AI rendering</p>
+          </div>
+        </div>
 
-        <a href="https://www.instagram.com/siraj_hassan/" target="_blank" rel="noopener noreferrer" class="contact-card">
-          <div class="contact-icon">📸</div>
-          <h3>Instagram</h3>
-          <span class="glow-link">@siraj_hassan</span>
-        </a>
+        <!-- Additional Videos (5-12) -->
+        <div class="video-item landscape" data-video-url="path/to/landscape-video-5.mp4">
+          <img src="images/landscape-1.png" alt="Landscape Video 5" class="video-thumbnail">
+          <div class="play-button">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <div class="video-overlay">
+            <h3>Sci-Fi Environment</h3>
+            <p>AI-generated futuristic worlds</p>
+          </div>
+        </div>
 
-        <a href="http://x.com/sirajSoft/" target="_blank" rel="noopener noreferrer" class="contact-card">
-          <div class="contact-icon">𝕏</div>
-          <h3>Twitter</h3>
-          <span class="glow-link">@sirajSoft</span>
-        </a>
+        <div class="video-item portrait" data-video-url="path/to/portrait-video-5.mp4">
+          <img src="images/portrait-1.png" alt="Portrait Video 5" class="video-thumbnail">
+          <div class="play-button">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <div class="video-overlay">
+            <h3>Character Emotions</h3>
+            <p>Deep learning emotion synthesis</p>
+          </div>
+        </div>
+
+        <div class="video-item landscape" data-video-url="path/to/landscape-video-6.mp4">
+          <img src="images/landscape-1.png" alt="Landscape Video 6" class="video-thumbnail">
+          <div class="play-button">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <div class="video-overlay">
+            <h3>Dynamic Weather</h3>
+            <p>Real-time weather simulation</p>
+          </div>
+        </div>
+
+        <div class="video-item portrait" data-video-url="path/to/portrait-video-6.mp4">
+          <img src="images/portrait-1.png" alt="Portrait Video 6" class="video-thumbnail">
+          <div class="play-button">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <div class="video-overlay">
+            <h3>Style Transfer</h3>
+            <p>Neural style animation</p>
+          </div>
+        </div>
+
+        <div class="video-item landscape" data-video-url="path/to/landscape-video-7.mp4">
+          <img src="images/landscape-1.png" alt="Landscape Video 7" class="video-thumbnail">
+          <div class="play-button">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <div class="video-overlay">
+            <h3>Particle Systems</h3>
+            <p>AI-driven particle animations</p>
+          </div>
+        </div>
+
+        <div class="video-item portrait" data-video-url="path/to/portrait-video-7.mp4">
+          <img src="images/portrait-1.png" alt="Portrait Video 7" class="video-thumbnail">
+          <div class="play-button">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <div class="video-overlay">
+            <h3>Motion Capture</h3>
+            <p>AI motion reconstruction</p>
+          </div>
+        </div>
+
+        <div class="video-item landscape" data-video-url="path/to/landscape-video-8.mp4">
+          <img src="images/landscape-1.png" alt="Landscape Video 8" class="video-thumbnail">
+          <div class="play-button">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <div class="video-overlay">
+            <h3>Light Simulation</h3>
+            <p>Neural rendering with dynamic lighting</p>
+          </div>
+        </div>
+
+        <div class="video-item portrait" data-video-url="path/to/portrait-video-8.mp4">
+          <img src="images/portrait-1.png" alt="Portrait Video 8" class="video-thumbnail">
+          <div class="play-button">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <div class="video-overlay">
+            <h3>Character Interaction</h3>
+            <p>AI-powered character dynamics</p>
+          </div>
+        </div>
       </div>
 
-      <!-- Contact Form -->
-      <div class="contact-form-container">
-        <h3>Send Me a Message</h3>
-        <form id="contactForm" class="contact-form" onsubmit="handleSubmit(event)">
-          <div class="form-group">
-            <input type="text" id="name" name="name" required placeholder="Your Name">
-          </div>
-          <div class="form-group">
-            <input type="email" id="email" name="email" required placeholder="Your Email">
-          </div>
-          <div class="form-group">
-            <select id="subject" name="subject" required>
-              <option value="" disabled selected>Select Subject</option>
-              <option value="collaboration">Collaboration</option>
-              <option value="project">Project Inquiry</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <textarea id="message" name="message" required placeholder="Your Message" rows="4"></textarea>
-          </div>
-          <button type="submit" class="submit-btn">Send Message</button>
-        </form>
+      <!-- Video Load More Button -->
+      <div class="load-more-container">
+        <button id="loadMoreVideosBtn" class="load-more-btn">Load More Videos</button>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SOCIAL SHARE MENU -->
-  <div class="share-menu">
-    <button class="share-toggle" aria-label="Share">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/>
-      </svg>
-    </button>
-    <div class="share-buttons">
-      <a href="#" class="share-button facebook" aria-label="Share on Facebook">
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <!-- AI Artist at Herogram -->
+        <div class="timeline-item">
+          <div class="timeline-date">Oct 2023 – Present</div>
+          <div class="timeline-content">
+            <h3>AI Artist</h3>
+            <h4>HEROGRAM FZ LLC, Dubai, UAE</h4>
+            <ul>
+              <li>Developed high-quality AI-generated content using Stable Diffusion and Flux models within ComfyUI</li>
+              <li>Created AI-powered video content using Animate Diff and Hunyuan Video AI</li>
+              <li>Engineered AI-based backend systems for garment apps using Meta AI's Segment Anything</li>
+              <li>Implemented advanced AI techniques for short animated film production</li>
+              <li>Optimized system prompts for various video AI models including Kling AI and Luma Dream</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Freelance AI Artist -->
+        <div class="timeline-item">
+          <div class="timeline-date">Aug 2022 – Aug 2023</div>
+          <div class="timeline-content">
+            <h3>Freelance AI Artist</h3>
+            <h4>Self-Employed, Global</h4>
+            <ul>
+              <li>Generated 50+ client-specific artworks using MidJourney and Stable Diffusion</li>
+              <li>Created viral AI content with over 1M views across platforms</li>
+              <li>Developed custom ComfyUI workflows for efficient content production</li>
+              <li>Engaged in Web3 ecosystem through NFT publishing and collection</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Content Producer -->
+        <div class="timeline-item">
+          <div class="timeline-date">Jun 2012 – Aug 2022</div>
+          <div class="timeline-content">
+            <h3>Content Producer - Photo and Video</h3>
+            <h4>FoneArena India Private Limited, Chennai, India</h4>
+            <ul>
+              <li>Directed video teams at international tech events (MWC Barcelona, IFA Berlin)</li>
+              <li>Grew YouTube channel views by 25% through optimized content strategies</li>
+              <li>Conducted interviews with industry leaders from Qualcomm, Samsung, and Nokia</li>
+              <li>Led creative content strategy and video optimization across platforms</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Software Developer -->
+        <div class="timeline-item">
+          <div class="timeline-date">Aug 2010 – May 2012</div>
+          <div class="timeline-content">
+            <h3>Software Developer</h3>
+            <h4>FoneArena India Private Limited, Chennai, India</h4>
+            <ul>
+              <li>Managed backend servers using SQL and WordPress CMS</li>
+              <li>Developed user-interactive web portals with PHP</li>
+              <li>Maintained database of 5,000+ phone specifications</li>
+              <li>Optimized SEO for enhanced web visibility</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials">
+      <h2>Client Testimonials</h2>
+      <p class="section-intro">What clients say about working with me</p>
+      
+      <div class="testimonials-container">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="quote-icon">❝</div>
+            <p>"Siraj's expertise in AI art generation and custom workflow development transformed our content creation process. His automated pipelines helped us scale our production while maintaining consistent brand quality."</p>
+            <div class="testimonial-author">
+              <div class="author-icon">👩‍💼</div>
+              <div class="author-info">
+                <h4>Sarah Johnson</h4>
+                <span>Creative Director, ArtTech Studios</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="quote-icon">❝</div>
+            <p>"The custom ComfyUI workflows Siraj developed for our team revolutionized our content pipeline. His deep understanding of AI models and automation helped us achieve consistent, high-quality results at scale."</p>
+            <div class="testimonial-author">
+              <div class="author-icon">👨‍💼</div>
+              <div class="author-info">
+                <h4>Michael Chen</h4>
+                <span>Product Manager, InnovateLab</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="quote-icon">❝</div>
+            <p>"Working with Siraj on our AI video project was exceptional. His expertise in AnimateDiff and Hunyuan AI, combined with custom workflow development, delivered outstanding results that exceeded our expectations."</p>
+            <div class="testimonial-author">
+              <div class="author-icon">👩‍🎨</div>
+              <div class="author-info">
+                <h4>Emily Rodriguez</h4>
+                <span>Art Director, DigitalDreams</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <h2>Let's Create Together</h2>
+      <p class="section-intro">Ready to bring your ideas to life with AI?</p>
+      
+      <div class="contact-container">
+        <!-- Contact Info Cards -->
+        <div class="contact-info">
+          <a href="mailto:sirajhassan@live.com" class="contact-card">
+            <div class="contact-icon">📧</div>
+            <h3>Email</h3>
+            <span class="glow-link">sirajhassan@live.com</span>
+          </a>
+          
+          <a href="https://www.linkedin.com/in/sirajsoft" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="contact-icon">💼</div>
+            <h3>LinkedIn</h3>
+            <span class="glow-link">linkedin.com/in/sirajsoft</span>
+          </a>
+          
+          <a href="https://github.com/siraj-hm" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="contact-icon">💻</div>
+            <h3>GitHub</h3>
+            <span class="glow-link">github.com/siraj-hm</span>
+          </a>
+
+          <a href="https://www.instagram.com/siraj_hassan/" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="contact-icon">📸</div>
+            <h3>Instagram</h3>
+            <span class="glow-link">@siraj_hassan</span>
+          </a>
+
+          <a href="http://x.com/sirajSoft/" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="contact-icon">𝕏</div>
+            <h3>Twitter</h3>
+            <span class="glow-link">@sirajSoft</span>
+          </a>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-container">
+          <h3>Send Me a Message</h3>
+          <form id="contactForm" class="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <input type="text" id="name" name="name" required placeholder="Your Name">
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" required placeholder="Your Email">
+            </div>
+            <div class="form-group">
+              <select id="subject" name="subject" required>
+                <option value="" disabled selected>Select Subject</option>
+                <option value="collaboration">Collaboration</option>
+                <option value="project">Project Inquiry</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" required placeholder="Your Message" rows="4"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL SHARE MENU -->
+    <div class="share-menu">
+      <button class="share-toggle" aria-label="Share">
         <svg viewBox="0 0 24 24" width="24" height="24">
-          <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/>
-        </svg>
-      </a>
-      <a href="#" class="share-button twitter" aria-label="Share on Twitter">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.58v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"/>
-        </svg>
-      </a>
-      <a href="#" class="share-button linkedin" aria-label="Share on LinkedIn">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.4-2.6 2.4zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z"/>
-        </svg>
-      </a>
-      <a href="#" class="share-button whatsapp" aria-label="Share on WhatsApp">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <path d="M20.1 3.9C17.9 1.7 15 .5 12 .5 5.8.5.7 5.6.7 11.9c0 2 .5 3.9 1.5 5.6L.6 23.4l6-1.6c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5.1 11.4-11.4-.1-2.8-1.2-5.7-3.3-7.8zM12 21.4c-1.7 0-3.3-.5-4.8-1.3l-.4-.2-3.5 1 1-3.4L4 17c-1-1.5-1.4-3.2-1.4-5.1 0-5.2 4.2-9.4 9.4-9.4 2.5 0 4.9 1 6.7 2.8 1.8 1.8 2.8 4.2 2.8 6.7-.1 5.2-4.3 9.4-9.5 9.4zm5.1-7.1c-.3-.1-1.7-.9-1.9-1-.3-.1-.5-.1-.7.1-.2.3-.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6s.3-.3.4-.5c.2-.1.3-.3.4-.5.1-.2 0-.4 0-.5C10 9 9.3 7.6 9 7c-.1-.4-.4-.3-.5-.3-.5h-.6s-.4.1-.7.3c-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.3-.3-.4-.6-.5-.5z"/>
-        </svg>
-      </a>
-      <button class="share-button copy" aria-label="Copy Link">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+          <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/>
         </svg>
       </button>
+      <div class="share-buttons">
+        <a href="#" class="share-button facebook" aria-label="Share on Facebook">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/>
+          </svg>
+        </a>
+        <a href="#" class="share-button twitter" aria-label="Share on Twitter">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.58v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"/>
+          </svg>
+        </a>
+        <a href="#" class="share-button linkedin" aria-label="Share on LinkedIn">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.4-2.6 2.4zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z"/>
+          </svg>
+        </a>
+        <a href="#" class="share-button whatsapp" aria-label="Share on WhatsApp">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path d="M20.1 3.9C17.9 1.7 15 .5 12 .5 5.8.5.7 5.6.7 11.9c0 2 .5 3.9 1.5 5.6L.6 23.4l6-1.6c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5.1 11.4-11.4-.1-2.8-1.2-5.7-3.3-7.8zM12 21.4c-1.7 0-3.3-.5-4.8-1.3l-.4-.2-3.5 1 1-3.4L4 17c-1-1.5-1.4-3.2-1.4-5.1 0-5.2 4.2-9.4 9.4-9.4 2.5 0 4.9 1 6.7 2.8 1.8 1.8 2.8 4.2 2.8 6.7-.1 5.2-4.3 9.4-9.5 9.4zm5.1-7.1c-.3-.1-1.7-.9-1.9-1-.3-.1-.5-.1-.7.1-.2.3-.3-.8 1-.9 1.1-.2.2-.2.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6s.3-.3.4-.5c.2-.1.3-.3.4-.5.1-.2 0-.4 0-.5C10 9 9.3 7.6 9 7c-.1-.4-.4-.3-.5-.3-.5h-.6s-.4.1-.7.3c-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.3-.3-.4-.6-.5-.5z"/>
+          </svg>
+        </a>
+        <button class="share-button copy" aria-label="Copy Link">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+          </svg>
+        </button>
+      </div>
     </div>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" onclick="closeLightbox(event)">
+      <span class="close" onclick="closeLightbox(event)">&times;</span>
+      <button class="lightbox-nav prev" onclick="navigateLightbox('prev', event)">&lt;</button>
+      <img class="lightbox-content" id="lightbox-img" src="" alt="Expanded View">
+      <button class="lightbox-nav next" onclick="navigateLightbox('next', event)">&gt;</button>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2024 Siraj Hassan. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+      </svg>
+    </button>
   </div>
-
-  <!-- LIGHTBOX MODAL -->
-  <div id="lightbox" onclick="closeLightbox(event)">
-    <span class="close" onclick="closeLightbox(event)">&times;</span>
-    <button class="lightbox-nav prev" onclick="navigateLightbox('prev', event)">&lt;</button>
-    <img class="lightbox-content" id="lightbox-img" src="" alt="Expanded View">
-    <button class="lightbox-nav next" onclick="navigateLightbox('next', event)">&gt;</button>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2024 Siraj Hassan. All Rights Reserved.</p>
-  </footer>
-
-  <!-- Back to Top Button -->
-  <button id="backToTop" class="back-to-top" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" width="24" height="24">
-      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
-    </svg>
-  </button>
 
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -1009,6 +1015,13 @@
         });
     }
   });
+  </script>
+  <script>
+    // Add loader handling
+    window.addEventListener('load', () => {
+      document.querySelector('.page-loader').classList.add('fade-out');
+      document.querySelector('.content').classList.add('visible');
+    });
   </script>
 </body>
 </html>
