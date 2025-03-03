@@ -117,9 +117,8 @@ nav ul {
 .nav-link {
   color: var(--text-color);
   text-decoration: none;
-  font-weight: 500;
+  padding: 0.5rem 1rem;
   position: relative;
-  padding: 0.5rem 0;
   transition: color 0.3s ease;
 }
 
@@ -127,19 +126,21 @@ nav ul {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
   width: 0;
   height: 2px;
-  background: var(--secondary-color);
-  transition: width 0.3s ease;
+  background: var(--accent-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
 
-.nav-link:hover {
-  color: var(--primary-color);
+.nav-link:hover::before,
+.nav-link.active::before {
+  width: 80%;
 }
 
-.nav-link:hover::before {
-  width: 100%;
+.nav-link.active {
+  color: var(--accent-color);
 }
 
 @keyframes pulse {
@@ -1476,29 +1477,31 @@ html {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: -100%;
+  width: 200%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transform: translateX(-100%);
-  animation: shimmerEffect 2s infinite;
-  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  animation: shimmerEffect 1.5s infinite;
 }
 
 @keyframes shimmerEffect {
-  100% { transform: translateX(100%); }
+  to {
+    transform: translateX(100%);
+  }
 }
 
-/* Fade in animation for lazy loaded images */
-.lazy-image {
+img {
   opacity: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  transform: translateY(20px);
+  transition: opacity 0.3s ease;
 }
 
-.lazy-image.loaded {
+img.loaded {
   opacity: 1;
-  transform: translateY(0);
 }
 
 /* TESTIMONIALS SECTION */
@@ -1960,5 +1963,41 @@ html {
   
   .industry-card li {
     font-size: 0.9rem;
+  }
+}
+
+/* Section Animations */
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add staggered delay for consecutive sections */
+section:nth-child(2) { transition-delay: 0.05s; }
+section:nth-child(3) { transition-delay: 0.1s; }
+section:nth-child(4) { transition-delay: 0.15s; }
+section:nth-child(5) { transition-delay: 0.2s; }
+section:nth-child(n+6) { transition-delay: 0.25s; }
+
+/* Ensure sections below the fold start hidden */
+section:not(.visible) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Remove animation for mobile devices that prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  section {
+    transition: none;
+    opacity: 1;
+    transform: none;
   }
 }

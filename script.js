@@ -566,3 +566,74 @@ function showToast(message) {
     }, 300);
   }, 2000);
 }
+
+// Section lazy loading with Intersection Observer
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    // Add visible class when section comes into view
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      // Optional: Unobserve after animation
+      // sectionObserver.unobserve(entry.target);
+    } else {
+      // Optional: Remove visible class when section leaves viewport
+      // entry.target.classList.remove('visible');
+    }
+  });
+}, {
+  // Trigger when section is 20% visible
+  threshold: 0.2,
+  // Start loading slightly before section comes into view
+  rootMargin: '50px'
+});
+
+// Observe all sections except hero (which should be visible immediately)
+document.querySelectorAll('section:not(#hero)').forEach(section => {
+  sectionObserver.observe(section);
+});
+
+// Make hero section visible immediately
+document.querySelector('#hero')?.classList.add('visible');
+
+// Navigation active states
+const sections = document.querySelectorAll('section[id]');
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.pageYOffset;
+  
+  sections.forEach(section => {
+    const sectionHeight = section.offsetHeight;
+    const sectionTop = section.offsetTop - 100;
+    const sectionId = section.getAttribute('id');
+    
+    if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      document.querySelector(`.nav-link[href*=${sectionId}]`)?.classList.add('active');
+    } else {
+      document.querySelector(`.nav-link[href*=${sectionId}]`)?.classList.remove('active');
+    }
+  });
+});
+
+// Image loading animations
+function handleImageLoading() {
+  const images = document.querySelectorAll('img');
+  
+  images.forEach(img => {
+    if (!img.complete) {
+      img.parentElement.classList.add('image-loader');
+      
+      img.addEventListener('load', () => {
+        img.classList.add('loaded');
+        img.parentElement.classList.remove('image-loader');
+      });
+      
+      img.addEventListener('error', () => {
+        img.parentElement.classList.remove('image-loader');
+      });
+    } else {
+      img.classList.add('loaded');
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', handleImageLoading);
