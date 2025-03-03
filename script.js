@@ -457,3 +457,112 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Back to Top Button Functionality
+const backToTopButton = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTopButton.classList.add('visible');
+  } else {
+    backToTopButton.classList.remove('visible');
+  }
+});
+
+backToTopButton.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+// Lazy Loading Images
+document.addEventListener('DOMContentLoaded', function() {
+  const lazyImages = document.querySelectorAll('img.lazy-image');
+  
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.classList.add('loading-animation');
+        
+        // Load the image
+        const loadImage = new Image();
+        loadImage.src = img.src;
+        loadImage.onload = () => {
+          img.classList.remove('loading-animation');
+          img.classList.add('loaded');
+        };
+        
+        observer.unobserve(img);
+      }
+    });
+  }, {
+    rootMargin: '50px'
+  });
+  
+  lazyImages.forEach(img => {
+    imageObserver.observe(img);
+  });
+});
+
+// Update all image elements to use lazy loading
+document.querySelectorAll('img').forEach(img => {
+  if (!img.hasAttribute('loading')) {
+    img.setAttribute('loading', 'lazy');
+  }
+});
+
+// Social Share Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const shareButtons = document.querySelectorAll('.share-button');
+  const pageUrl = encodeURIComponent(window.location.href);
+  const shareMessage = encodeURIComponent("Explore Siraj Hassan's innovative AI-generated artworks, where cutting-edge technology meets creative vision. Experience the intersection of artificial intelligence and artistic expression.");
+  const pageTitle = encodeURIComponent("Siraj Hassan - AI Artist & Visual Creator");
+  
+  shareButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      let shareUrl = '';
+      
+      if (button.classList.contains('facebook')) {
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}&quote=${shareMessage}`;
+      } else if (button.classList.contains('twitter')) {
+        shareUrl = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${shareMessage}`;
+      } else if (button.classList.contains('linkedin')) {
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}&summary=${shareMessage}`;
+      } else if (button.classList.contains('whatsapp')) {
+        shareUrl = `https://wa.me/?text=${shareMessage}%20${pageUrl}`;
+      } else if (button.classList.contains('copy')) {
+        const fullMessage = `${decodeURIComponent(shareMessage)}\n\n${window.location.href}`;
+        navigator.clipboard.writeText(fullMessage).then(() => {
+          showToast('Link and message copied to clipboard!');
+        });
+        return;
+      }
+      
+      if (shareUrl) {
+        window.open(shareUrl, '_blank', 'width=600,height=400');
+      }
+    });
+  });
+});
+
+// Toast notification function
+function showToast(message) {
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  
+  // Trigger reflow to enable transition
+  toast.offsetHeight;
+  toast.classList.add('show');
+  
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => {
+      document.body.removeChild(toast);
+    }, 300);
+  }, 2000);
+}
